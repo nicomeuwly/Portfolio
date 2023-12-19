@@ -37,6 +37,10 @@ window.addEventListener("resize", () => {
 <template>
   <div id="content">
     <Folder class="folder"/>
+    <Folder class="folder"/>
+    <Folder class="folder"/>
+    <Folder class="folder"/>
+    <Folder class="folder"/>
   </div>
   <div id="background-items">
     <img src="/img/Logo.png" alt="Logo Nicolas Meuwly" id="logo" />
@@ -62,14 +66,13 @@ window.addEventListener("resize", () => {
 #content {
   margin: 150px;
   position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 90px;
   z-index: 2;
   width: calc(100% - 300px);
   height: calc(100% - 300px);
-}
-.folder {
-  position: absolute;
-  top: 50%;
-  left: 50%;
 }
 #background-items {
   margin: 50px;
