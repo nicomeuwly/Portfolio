@@ -5,7 +5,7 @@ export default {
   name: "Home",
   components: {
     Folder,
-  },
+  }
 };
 
 const viewportHeight = window.innerHeight;
@@ -36,21 +36,21 @@ window.addEventListener("resize", () => {
 
 <template>
   <div id="content">
-    <Folder class="folder"/>
-    <Folder class="folder"/>
-    <Folder class="folder"/>
-    <Folder class="folder"/>
-    <Folder class="folder"/>
+    <Folder :id="1" icon="Info" title="A PROPOS"/>
+    <Folder :id="2" icon="Path" title="PARCOURS"/>
+    <Folder :id="3" icon="Jobs" title="REALISATIONS"/>
+    <Folder :id="4" icon="Tools" title="OUTILS"/>
+    <Folder :id="5" icon="Website" title="CE SITE"/>
   </div>
   <div id="background-items">
-    <img src="/img/Logo.png" alt="Logo Nicolas Meuwly" id="logo" />
+    <img src="/img/Logo.svg" alt="Logo Nicolas Meuwly" id="logo" />
     <img
-      src="/img/Corner.png"
+      src="/img/Corner.svg"
       alt="Top right corner"
       class="corner top-right"
     />
     <img
-      src="/img/Corner.png"
+      src="/img/Corner.svg"
       alt="Bottom left corner"
       class="corner bottom-left"
     />
@@ -69,7 +69,6 @@ window.addEventListener("resize", () => {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 90px;
   z-index: 2;
   width: calc(100% - 300px);
   height: calc(100% - 300px);

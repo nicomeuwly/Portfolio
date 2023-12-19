@@ -6,7 +6,13 @@
   --gray-light: #ECECEC;
 }
 
+@font-face {
+  font-family: SF-Pro; 
+  src: url(/font/SF-Pro.ttf);
+}
+
 body {
   background-color: var(--black);
   margin: 0;
+  font-family: SF-Pro, sans-serif;
 }
