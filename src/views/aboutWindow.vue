@@ -83,6 +83,7 @@ li img {
   height: 250px;
   border-radius: 50%;
   border: 2px solid var(--white);
+  filter: grayscale(100%);
 }
 
 #profile-picture-container {
