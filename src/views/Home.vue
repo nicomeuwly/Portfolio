@@ -1,74 +1,100 @@
 <script>
 import Folder from "@/components/Folder.vue";
-import Window from "@/components/Window.vue";
+import AboutWindow from "./aboutWindow.vue";
+import PathWindow from "./pathWindow.vue";
+import JobsWindow from "./jobsWindow.vue";
+import ToolsWindow from "./toolsWindow.vue";
+import WebsiteWindow from "./websiteWindow.vue";
+import Background from "@/components/background.vue";
 
 export default {
   name: "Home",
   components: {
     Folder,
-    Window,
+    AboutWindow,
+    PathWindow,
+    JobsWindow,
+    ToolsWindow,
+    WebsiteWindow,
+    Background,
+  },
+  data() {
+    return {
+      folders: {
+        1: {
+          title: "A PROPOS",
+          icon: "Info",
+        },
+        2: {
+          title: "PARCOURS",
+          icon: "Path",
+        },
+        3: {
+          title: "REALISATIONS",
+          icon: "Jobs",
+        },
+        4: {
+          title: "OUTILS",
+          icon: "Tools",
+        },
+        5: {
+          title: "CE SITE",
+          icon: "Website",
+        },
+      },
+      isWindowOpen: false,
+      activeWindowId: null,
+    };
   },
   methods: {
-    openWindow() {
-      const window = document.getElementById("window");
-      window.style.display = "block";
+    receiveDataFromParent(data) {
+      this.isWindowOpen = data;
+    },
+    openWindow(id) {
+      this.isWindowOpen = true;
+      this.activeWindowId = id;
     },
   },
 };
-
-const viewportHeight = window.innerHeight;
-const viewportWidth = window.innerWidth;
-
-const setGradients = () => {
-  const gradient1 = document.getElementById("gradient1");
-  gradient1.style.height = `${viewportHeight / 3}px`;
-  gradient1.style.width = `${viewportWidth}px`;
-
-  const gradient2 = document.getElementById("gradient2");
-  gradient2.style.height = `${viewportHeight / 3}px`;
-  gradient2.style.width = `${(viewportWidth * 2) / 3}px`;
-
-  const gradient3 = document.getElementById("gradient3");
-  gradient3.style.height = `${viewportHeight / 3}px`;
-  gradient3.style.width = `${viewportWidth / 3}px`;
-};
-
-window.onload = () => {
-  setGradients();
-};
-
-window.addEventListener("resize", () => {
-  setGradients();
-});
 </script>
 
 <template>
   <div id="content">
-    <Folder :id="1" icon="Info" title="A PROPOS" @click="openWindow()"/>
-    <Folder :id="2" icon="Path" title="PARCOURS" @click="openWindow()"/>
-    <Folder :id="3" icon="Jobs" title="REALISATIONS" @click="openWindow()"/>
-    <Folder :id="4" icon="Tools" title="OUTILS" @click="openWindow()"/>
-    <Folder :id="5" icon="Website" title="CE SITE" @click="openWindow()"/>
-    <Window />
-  </div>
-  <div id="background-items">
-    <img src="/img/Logo.svg" alt="Logo Nicolas Meuwly" id="logo" />
-    <img
-      src="/img/Corner.svg"
-      alt="Top right corner"
-      class="corner top-right"
+    <Folder
+      v-for="(folder, id) in folders"
+      :key="parseInt(id)"
+      :id="parseInt(id)"
+      :title="folder.title"
+      :icon="folder.icon"
+      @click="openWindow(parseInt(id))"
     />
-    <img
-      src="/img/Corner.svg"
-      alt="Bottom left corner"
-      class="corner bottom-left"
+    <AboutWindow
+      class="window"
+      v-if="isWindowOpen && activeWindowId === 1"
+      @parent-to-grandparent="receiveDataFromParent"
+    />
+    <PathWindow
+      class="window"
+      v-if="isWindowOpen && activeWindowId === 2"
+      @parent-to-grandparent="receiveDataFromParent"
+    />
+    <JobsWindow
+      class="window"
+      v-if="isWindowOpen && activeWindowId === 3"
+      @parent-to-grandparent="receiveDataFromParent"
+    />
+    <ToolsWindow
+      class="window"
+      v-if="isWindowOpen && activeWindowId === 4"
+      @parent-to-grandparent="receiveDataFromParent"
+    />
+    <WebsiteWindow
+      class="window"
+      v-if="isWindowOpen && activeWindowId === 5"
+      @parent-to-grandparent="receiveDataFromParent"
     />
   </div>
-  <div id="background-gradients">
-    <div id="gradient1"></div>
-    <div id="gradient2"></div>
-    <div id="gradient3"></div>
-  </div>
+  <Background />
 </template>
 
 <style>
@@ -82,38 +108,8 @@ window.addEventListener("resize", () => {
   width: calc(100% - 300px);
   height: calc(100% - 300px);
 }
-#background-items {
-  margin: 50px;
+.window {
   position: absolute;
-  z-index: 1;
-  width: calc(100% - 100px);
-  height: calc(100% - 100px);
-}
-#logo {
-  width: 80px;
-  height: 87px;
-}
-.corner {
-  width: 68px;
-  height: 68px;
-  position: absolute;
-}
-.top-right {
-  top: 0;
-  right: 0;
-}
-.bottom-left {
-  bottom: 0;
-  left: 0;
-  transform: scale(-1, -1);
-}
-#gradient1 {
-  background: linear-gradient(90deg, var(--blue) 0%, var(--black) 100%);
-}
-#gradient2 {
-  background: linear-gradient(90deg, var(--blue) 0%, var(--black) 100%);
-}
-#gradient3 {
-  background: linear-gradient(90deg, var(--blue) 0%, var(--black) 100%);
+  z-index: 3;
 }
 </style>

@@ -1,0 +1,33 @@
+<script>
+export default {
+  name: "MainButton",
+  props: {
+    name: String,
+  },
+};
+</script>
+
+<template>
+  <div>{{ name }}</div>
+</template>
+
+<style scoped>
+div {
+  width: 180px;
+  height: 80px;
+  background-color: var(--white);
+  border-radius: 20px;
+  color: var(--blue);
+  font-size: 2rem;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+div:hover {
+  background-color: rgb(255, 255, 255, 0.6);
+  box-sizing: border-box;
+  border: 2px solid var(--white);
+  color: var(--white);
+}
+</style>
