@@ -1,11 +1,19 @@
 <script>
 import Folder from "@/components/Folder.vue";
+import Window from "@/components/Window.vue";
 
 export default {
   name: "Home",
   components: {
     Folder,
-  }
+    Window,
+  },
+  methods: {
+    openWindow() {
+      const window = document.getElementById("window");
+      window.style.display = "block";
+    },
+  },
 };
 
 const viewportHeight = window.innerHeight;
@@ -36,11 +44,12 @@ window.addEventListener("resize", () => {
 
 <template>
   <div id="content">
-    <Folder :id="1" icon="Info" title="A PROPOS"/>
-    <Folder :id="2" icon="Path" title="PARCOURS"/>
-    <Folder :id="3" icon="Jobs" title="REALISATIONS"/>
-    <Folder :id="4" icon="Tools" title="OUTILS"/>
-    <Folder :id="5" icon="Website" title="CE SITE"/>
+    <Folder :id="1" icon="Info" title="A PROPOS" @click="openWindow()"/>
+    <Folder :id="2" icon="Path" title="PARCOURS" @click="openWindow()"/>
+    <Folder :id="3" icon="Jobs" title="REALISATIONS" @click="openWindow()"/>
+    <Folder :id="4" icon="Tools" title="OUTILS" @click="openWindow()"/>
+    <Folder :id="5" icon="Website" title="CE SITE" @click="openWindow()"/>
+    <Window />
   </div>
   <div id="background-items">
     <img src="/img/Logo.svg" alt="Logo Nicolas Meuwly" id="logo" />

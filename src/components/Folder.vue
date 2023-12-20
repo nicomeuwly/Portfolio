@@ -1,5 +1,6 @@
 <script>
 export default {
+  name: "Folder",
   props: {
     id: Number,
     title: String,
@@ -68,7 +69,6 @@ export default {
 
 .folder-title {
   margin-top: 10px;
-  transition: font-weight 0.3s ease;
   color: var(--white);
 }
 
