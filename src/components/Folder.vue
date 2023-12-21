@@ -27,7 +27,7 @@ export default {
   >
     <div class="folder-content">
       <img
-        :src="isHovered ? '/img/Folder-Hover.svg' : '/img/Folder.svg'"
+        :src="isHovered ? '/Portfolio/img/Folder-Hover.svg' : '/Portfolio/img/Folder.svg'"
         alt="Folder"
         :class="'folder-' + id"
       />
@@ -35,8 +35,8 @@ export default {
     <img
       :src="
         isHovered
-          ? '/img/icons/' + icon + '-Icon-Hover.svg'
-          : '/img/icons/' + icon + '-Icon.svg'
+          ? '/Portfolio/img/icons/' + icon + '-Icon-Hover.svg'
+          : '/Portfolio/img/icons/' + icon + '-Icon.svg'
       "
       :alt="icon + ' icon'"
       class="folder-icon"
