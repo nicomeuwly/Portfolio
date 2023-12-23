@@ -12,7 +12,7 @@ export default {
 <template>
   <div>
     <div id="window">
-      <svg>
+      <svg width="100%" height="15%">
         <circle
           cx="30"
           cy="30"
@@ -61,7 +61,9 @@ export default {
   stroke: var(--red);
 }
 #window-content {
-  margin: 50px 100px 100px 100px;
-  height: calc(100% - 350px);
+  margin: 0% 10% 15% 10%;
+  height: 70%;
+  display: flex;
+  align-items: center;
 }
 </style>

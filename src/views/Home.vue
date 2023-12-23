@@ -1,5 +1,5 @@
 <script>
-import Folder from "@/components/Folder.vue";
+import Folder from "@/components/folder.vue";
 import AboutWindow from "./aboutWindow.vue";
 import PathWindow from "./pathWindow.vue";
 import JobsWindow from "./jobsWindow.vue";
