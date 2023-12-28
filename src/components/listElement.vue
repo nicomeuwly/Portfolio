@@ -15,7 +15,7 @@ export default {
     <div id="`${idName}-${id}`" class="list-element">
         <span class="list-element-date">{{ date }}</span>
         <svg height="84" width="84">
-            <circle cx="42" cy="42" r="40" stroke="white" stroke-width="2" fill="none"/>
+            <circle class="list-element-circle" cx="42" cy="42" r="40" stroke="white" stroke-width="2" fill="rgba(0, 2, 41)"/>
         </svg>
         <div class="list-element-content">
             <span class="list-element-title">{{ title }}</span>
@@ -31,6 +31,7 @@ export default {
         align-items: center;
         justify-content: left;
         gap: 30px;
+        width: 100%;
     }
     .list-element-content {
         display: flex;
@@ -48,6 +49,8 @@ export default {
     }
     .list-element-date {
         font-size: 1.5rem;
+        width: 8%;
+        text-align: right;
     }
     .list-element-description {
         font-size: 1rem;

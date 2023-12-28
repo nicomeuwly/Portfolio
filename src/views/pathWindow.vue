@@ -12,6 +12,15 @@ export default {
     receiveDataFromChild(data) {
       this.$emit("parent-to-grandparent", data);
     },
+    setLinePosition(){
+      const dateWidth = document.querySelector(".list-element-date").offsetWidth;
+      const circleWidth = parseInt(document.querySelector(".list-element-circle").getAttribute("r"));
+      const windowStyle = document.querySelector("#window-content").currentStyle || window.getComputedStyle(document.querySelector("#window-content"));
+      const windowLeftMargin = windowStyle.marginLeft;
+      const windowLeftMarginNumber = parseInt(windowLeftMargin.replace("px", ""));
+      const line = document.querySelector(".bg-line");
+      line.style.left = dateWidth + circleWidth + windowLeftMarginNumber + 32 + "px";
+    }
   },
   data() {
     return {
@@ -70,7 +79,10 @@ export default {
         },
       },
     }
-  }
+  },
+  mounted() {
+    this.setLinePosition();
+  },
 };
 </script>
 
@@ -80,6 +92,7 @@ export default {
       <ListElement v-for="(element, id) in education" :key="parseInt(id)" :id="parseInt(id)" :idName="'education'"
         :title="element.title" :date="element.date" :description="element.description" />
     </div>
+    <div class="bg-line"></div>
   </Window>
 </template>
 
@@ -88,11 +101,20 @@ export default {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  gap: 50%;
-  height: 76%;
+  gap: 20%;
+  height: 100%;
+  width: 100%;
   overflow-y: scroll;
+  z-index: 1;
 }
 .list-element-container::-webkit-scrollbar {
   display: none;
+}
+.bg-line {
+  width: 2px;
+  height: 70%;
+  background-color: var(--white);
+  z-index: 0;
+  position: absolute;
 }
 </style>
