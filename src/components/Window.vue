@@ -59,6 +59,7 @@ export default {
 #close-button:hover {
   fill: var(--red);
   stroke: var(--red);
+  transition: fill 0.3s ease, stroke 0.3s ease;
 }
 #window-content {
   margin: 0% 10% 15% 10%;

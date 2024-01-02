@@ -1,5 +1,6 @@
 <script>
-import Folder from "@/components/folder.vue";
+import Folder from "@/components/Folder.vue";
+import LandingWindow from "./landingWindow.vue";
 import AboutWindow from "./aboutWindow.vue";
 import PathWindow from "./pathWindow.vue";
 import JobsWindow from "./jobsWindow.vue";
@@ -11,13 +12,14 @@ export default {
   name: "Home",
   components: {
     Folder,
+    LandingWindow,
     AboutWindow,
     PathWindow,
     JobsWindow,
     ToolsWindow,
     WebsiteWindow,
-    Background,
-  },
+    Background
+},
   data() {
     return {
       folders: {
@@ -54,6 +56,15 @@ export default {
       this.isWindowOpen = true;
       this.activeWindowId = id;
     },
+    addClickFunctionAvatar() {
+      const avatar = document.querySelector(".avatar");
+      avatar.addEventListener("click", () => {
+        this.openWindow(0);
+      });
+    },
+  },
+  mounted() {
+    this.addClickFunctionAvatar();
   },
 };
 </script>
@@ -67,6 +78,11 @@ export default {
       :title="folder.title"
       :icon="folder.icon"
       @click="openWindow(parseInt(id))"
+    />
+    <LandingWindow
+      class="window"
+      v-if="isWindowOpen && activeWindowId === 0"
+      @parent-to-grandparent="receiveDataFromParent"
     />
     <AboutWindow
       class="window"
