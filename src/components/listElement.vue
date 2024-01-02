@@ -49,7 +49,7 @@ export default {
     }
     .list-element-date {
         font-size: 1.5rem;
-        width: 8%;
+        width: 10%;
         text-align: right;
     }
     .list-element-description {
