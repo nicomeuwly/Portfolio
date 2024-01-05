@@ -62,9 +62,15 @@ export default {
         this.openWindow(0);
       });
     },
+    openLandingWindowAfterLoading() {
+      setTimeout(() => {
+        this.openWindow(0);
+      }, 1000);
+    },
   },
   mounted() {
     this.addClickFunctionAvatar();
+    this.openLandingWindowAfterLoading();
   },
 };
 </script>

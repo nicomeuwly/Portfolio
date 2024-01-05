@@ -11,9 +11,6 @@ export default {
     receiveDataFromChild(data) {
       this.$emit("parent-to-grandparent", data);
     },
-    openLinkedIn() {
-      window.open("https://www.linkedin.com/in/nicolas-meuwly/");
-    },
   },
 };
 </script>
@@ -40,7 +37,7 @@ export default {
           alt="Profile Picture"
           id="profile-picture"
         />
-        <MainButton :name="'LinkedIn'" @click="openLinkedIn"/>
+        <MainButton :name="'LinkedIn'" :link="'https://www.linkedin.com/in/nicolas-meuwly/'"/>
       </div>
     </div>
   </Window>

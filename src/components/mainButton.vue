@@ -3,12 +3,13 @@ export default {
   name: "MainButton",
   props: {
     name: String,
+    link: String,
   },
 };
 </script>
 
 <template>
-  <div>{{ name }}</div>
+  <div><a :href="link" target="_blank">{{ name }}</a></div>
 </template>
 
 <style scoped>
@@ -29,5 +30,9 @@ div:hover {
   box-sizing: border-box;
   border: 2px solid var(--white);
   color: var(--white);
+}
+a {
+  color: inherit;
+  text-decoration: none;
 }
 </style>
