@@ -93,12 +93,12 @@ export default {
 <template>
   <Window @child-to-parent="receiveDataFromChild">
     <div class="toggle-button-container">
-      <p :class="{ 'bold-text': !toggleOn }" class="formation">Formation</p>
+      <p :class="{ 'active-text': !toggleOn }" class="formation">Formation</p>
       <label class="switch">
         <input type="checkbox" @change="switchList" />
         <span></span>
       </label>
-      <p :class="{ 'bold-text': toggleOn }" class="experience">Expérience</p>
+      <p :class="{ 'active-text': toggleOn }" class="experience">Expérience</p>
     </div>
     <div class="list-element-container">
       <ListElement v-if="!toggleOn" v-for="(element, id) in education" :key="parseInt(id)" :id="parseInt(id)"
@@ -197,7 +197,7 @@ export default {
   left: 34px;
 }
 p {
-  color: var(--white);
+  color: var(--white-2);
   width: 30%;
 }
 .formation {
@@ -206,7 +206,7 @@ p {
 .experience {
   text-align: left;
 }
-.bold-text {
-  font-weight: bold;
+.active-text {
+  color: var(--white);
 }
 </style>

@@ -25,7 +25,7 @@ div {
   align-items: center;
 }
 div:hover {
-  background-color: rgb(255, 255, 255, 0.6);
+  background-color: var(--white-2);
   box-sizing: border-box;
   border: 2px solid var(--white);
   color: var(--white);

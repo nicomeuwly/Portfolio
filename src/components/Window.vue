@@ -51,9 +51,9 @@ export default {
 #window {
   width: 70vw;
   height: 70vh;
-  border: 2px solid white;
+  border: 2px solid var(--white);
   border-radius: 10px;
-  background-color: rgba(0, 2, 41, 0.8);
+  background-color: var(--blue-dark-2);
   backdrop-filter: blur(10px);
 }
 #close-button:hover {

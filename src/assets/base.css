@@ -1,21 +1,16 @@
+/* Les couleurs avec une variante "-2" correspondent à la couleur de base mais avec une opacité définie */
 :root {
   --blue: #0006A2;
-  --blue-2: #1F2050;
+  --blue-2: rgba(0, 6, 162, 0.4);
   --blue-dark: #000229;
+  --blue-dark-2: rgba(0, 2, 41, 0.8);
   --black: #000000;
   --white: #ffffff;
-  --gray-dark: #B5B5B5;
-  --gray-light: #ECECEC;
+  --white-2: rgba(255, 255, 255, 0.6);
   --red: #BF2626;
 }
 
 @font-face {
   font-family: SF-Pro; 
   src: url(/font/SF-Pro.ttf);
-}
-
-body {
-  background-color: var(--black);
-  margin: 0;
-  font-family: SF-Pro, sans-serif;
 }
