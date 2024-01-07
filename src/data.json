@@ -52,5 +52,33 @@
             "date": "2021-23",
             "description": "Digitec Galaxus AG, Lausanne, 20-40%"
         }
-    }
+    },
+    "websiteSectionTitles": {
+        "1": {
+          "title": "Inspirations",
+          "icon": "Inspirations"
+        },
+        "2": {
+          "title": "Couleurs",
+          "icon": "Colors"
+        },
+        "3": {
+          "title": "Typographie",
+          "icon": "Typography"
+        },
+        "4": {
+          "title": "Technologies",
+          "icon": "Technology"
+        }
+      },
+      "skillsSectionTitles": {
+        "1": {
+          "title": "Développement",
+          "icon": "Devlopment"
+        },
+        "2": {
+          "title": "Création",
+          "icon": "Creation"
+        }
+      }
 }
