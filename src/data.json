@@ -85,32 +85,32 @@
     "1": {
       "title": "Bleu",
       "hex": "#0006A2",
-      "border": "false"
+      "border": false
     },
     "2": {
       "title": "Bleu foncé",
       "hex": "#000229",
-      "border": "false"
+      "border": false
     },
     "3": {
       "title": "Rouge",
       "hex": "#BF2626",
-      "border": "false"
+      "border": false
     },
     "4": {
       "title": "Noir",
       "hex": "#000000",
-      "border": "false"
+      "border": false
     },
     "5": {
       "title": "Gris",
       "hex": "#ECECEC",
-      "border": "true"
+      "border": true
     },
     "6": {
       "title": "Blanc",
       "hex": "#FFFFFF",
-      "border": "true"
+      "border": true
     }
   },
   "typo": {
@@ -136,6 +136,100 @@
       "title": "Déploiement",
       "description": "GitHub Pages",
       "icon": "GitHub"
+    }
+  },
+  "devSkills": {
+    "1": {
+      "title": "HTML",
+      "icon": "HTML",
+      "level": 4
+    },
+    "2": {
+      "title": "CSS",
+      "icon": "CSS",
+      "level": 3
+    },
+    "3": {
+      "title": "JavaScript",
+      "icon": "JavaScript",
+      "level": 4
+    },
+    "4": {
+      "title": "Node.js",
+      "icon": "Node",
+      "level": 2
+    },
+    "5": {
+      "title": "Vue.js",
+      "icon": "Vue",
+      "level": 4
+    },
+    "6": {
+      "title": "Angular",
+      "icon": "Angular",
+      "level": 1
+    },
+    "7": {
+      "title": "Laravel",
+      "icon": "Laravel",
+      "level": 3
+    },
+    "8": {
+      "title": "PHP",
+      "icon": "PHP",
+      "level": 1
+    },
+    "9": {
+      "title": "MySQL",
+      "icon": "MySQL",
+      "level": 1
+    },
+    "10": {
+      "title": "MongoDB",
+      "icon": "MongoDB",
+      "level": 2
+    },
+    "11": {
+      "title": "GitHub",
+      "icon": "GitHub",
+      "level": 2
+    }
+  },
+  "creationSkills": {
+    "1": {
+      "title": "Photoshop",
+      "icon": "Photoshop",
+      "level": 3
+    },
+    "2": {
+      "title": "Illustrator",
+      "icon": "Illustrator",
+      "level": 2
+    },
+    "3": {
+      "title": "Premiere Pro",
+      "icon": "PremierePro",
+      "level": 3
+    },
+    "4": {
+      "title": "After Effect",
+      "icon": "AfterEffect",
+      "level": 3
+    },
+    "5": {
+      "title": "InDesign",
+      "icon": "InDesign",
+      "level": 2
+    },
+    "6": {
+      "title": "Figma",
+      "icon": "Figma",
+      "level": 4
+    },
+    "7": {
+      "title": "Canva",
+      "icon": "Canva",
+      "level": 3
     }
   }
 }

@@ -4,19 +4,14 @@ export default {
   props: {
     color: String,
     colorName: String,
-    border: String,
-  },
-  methods: {
-    convertStingToBoolean() {
-      return this.border === "true" ? true : false;
-    }
+    border: Boolean,
   },
 };
 </script>
 
 <template>
     <div class="color-container">
-        <div :style="{ backgroundColor: color }" :class="{ border: convertStingToBoolean() }"></div>
+        <div :style="{ backgroundColor: color }" :class="{ border: border }"></div>
         <p>{{ color }}</p>
         <h2>{{ colorName }}</h2>
     </div>

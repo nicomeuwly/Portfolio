@@ -1,17 +1,21 @@
 <script>
 import WindowSidePanel from "@/components/WindowSidePanel.vue";
+import SkillElement from "@/components/skillElement.vue";
 import data from "../data.json";
 
 export default {
   name: "ToolsWindow",
   components: {
     WindowSidePanel,
+    SkillElement,
   },
   data() {
     return {
       activeSection: "Devlopment",
       hoverSection: "",
       titles: data.skillsSectionTitles,
+      devSkills: data.devSkills,
+      creationSkills: data.creationSkills,
     };
   },
   methods: {
@@ -56,21 +60,39 @@ export default {
       </ul>
     </template>
     <template v-slot:right-side-panel>
+      <!-- Section concernant les compétences en développement -->
       <div
         v-show="activeSection === 'Devlopment'"
-        id="inspiration-container"
+        id="development-container"
         class="section-container"
       >
         <h1>Développement</h1>
-        <div class="content-container"></div>
+        <div class="content-container">
+          <SkillElement
+            v-for="skill in devSkills"
+            :key="skill.title"
+            :title="skill.title"
+            :icon="skill.icon"
+            :level="skill.level"
+          />
+        </div>
       </div>
+      <!-- Section concernant les compétences en création -->
       <div
         v-show="activeSection === 'Creation'"
-        id="colors-container"
+        id="creation-container"
         class="section-container"
       >
         <h1>Création</h1>
-        <div class="content-container"></div>
+        <div class="content-container">
+          <SkillElement
+            v-for="skill in creationSkills"
+            :key="skill.title"
+            :title="skill.title"
+            :icon="skill.icon"
+            :level="skill.level"
+          />
+        </div>
       </div>
     </template>
   </WindowSidePanel>
@@ -115,10 +137,35 @@ li.active {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 25px;
+}
+
+.content-container {
+  max-width: 760px;
+  
+  margin: 5%;
+  display: flex;
+  justify-content: center;
+  
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 40px 70px;
+}
+#development-container .content-container {
+  max-height: 440px;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+#creation-container .content-container{
+  height: 100%;
+}
+
+.content-container::-webkit-scrollbar {
+  display: none;
 }
 
 h1 {
   color: var(--white);
 }
+
 </style>
