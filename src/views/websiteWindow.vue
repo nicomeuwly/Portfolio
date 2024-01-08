@@ -18,6 +18,7 @@ export default {
   data() {
     return {
       activeSection: 'Inspirations',
+      hoverSection: '',
       titles: data.websiteSectionTitles,
       colors: data.colors,
       typographies: data.typo,
@@ -34,6 +35,9 @@ export default {
     isActiveSection(section) {
       return this.activeSection === section;
     },
+    isHoveredSection(section) {
+      return this.hoverSection === section;
+    },
   },
 };
 </script>
@@ -43,9 +47,9 @@ export default {
     <template v-slot:left-side-panel>
       <ul>
         <li v-for="title in titles" :key="title" @click="setActiveSection(title.icon)"
-          :class="{ active: isActiveSection(title.icon) }">
+          :class="{ active: isActiveSection(title.icon) }" @mouseover="hoverSection = title.icon" @mouseout="hoverSection = ''">
           <img
-            :src="!isActiveSection(title.icon) ? '/Portfolio/img/icons/' + title.icon + '-Icon.svg' : '/Portfolio/img/icons/' + title.icon + '-Icon-Active.svg'"
+            :src="isActiveSection(title.icon) || isHoveredSection(title.icon) ? '/Portfolio/img/icons/' + title.icon + '-Icon-Active.svg' : '/Portfolio/img/icons/' + title.icon + '-Icon.svg'"
             :alt="title.icon + ' Icon'" />
           {{ title.title }}
         </li>
@@ -130,11 +134,11 @@ li.active {
 .content-container {
   padding: 5%;
   display: flex;
+  justify-content: center;
 }
 #colors-container .content-container {
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: center;
   gap: 30px;
 }
 #typography-container .content-container {
@@ -143,7 +147,6 @@ li.active {
 }
 #technology-container .content-container {
   flex-wrap: wrap;
-  justify-content: center;
   gap: 30px;
 }
 h1 {
@@ -151,9 +154,7 @@ h1 {
 }
 
 #moodboard {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
+  width: 90%;
 }
 
 #colors-container .content-container {
@@ -163,7 +164,8 @@ h1 {
 .comment {
   color: var(--white);
   text-align: center;
-  font-size: 0.8rem;
+  font-size: 1rem;
   margin: 0;
+  width: 100%;
 }
 </style>
