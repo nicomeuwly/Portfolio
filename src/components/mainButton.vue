@@ -14,12 +14,15 @@ export default {
 
 <style scoped>
 div {
-  width: 180px;
-  height: 80px;
+  min-width: 100px;
+  height: 60px;
+  padding-left: 20px;
+  padding-right: 20px;
   background-color: var(--white);
+  border: 2px solid transparent;
   border-radius: 20px;
   color: var(--blue);
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: bold;
   display: flex;
   justify-content: center;
@@ -27,7 +30,6 @@ div {
 }
 div:hover {
   background-color: var(--white-2);
-  box-sizing: border-box;
   border: 2px solid var(--white);
   color: var(--white);
 }

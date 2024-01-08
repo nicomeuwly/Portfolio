@@ -1,84 +1,141 @@
 {
-    "education": {
-        "1": {
-            "title": "CFC employé de commerce",
-            "date": "2019",
-            "description": "GYB, Payerne"
-        },
-        "2": {
-            "title": "Maturité professionnelle commerciale",
-            "date": "2019",
-            "description": "GYB, Payerne"
-        },
-        "3": {
-            "title": "Brevet de promotion sous-officier",
-            "date": "2020",
-            "description": "ER av 81-2/20, Payerne"
-        },
-        "4": {
-            "title": "Bachelor en Ingénierie des médias",
-            "date": "2024",
-            "description": "HEIG-VD, Yverdon-les-Bains"
-        }
+  "education": {
+    "1": {
+      "title": "CFC employé de commerce",
+      "date": "2019",
+      "description": "GYB, Payerne"
     },
-    "experience": {
-        "1": {
-            "title": "Stagiaire 3+1",
-            "date": "2018-19",
-            "description": "Police cantonale Fribourg, Granges-Paccot, 100%"
-        },
-        "2": {
-            "title": "Employé d’administration",
-            "date": "2019",
-            "description": "Police cantonale Fribourg, Granges-Paccot, 100%"
-        },
-        "3": {
-            "title": "Ordonnance de bureau",
-            "date": "2020",
-            "description": "ER av 81-1/20, Payerne, 100%"
-        },
-        "4": {
-            "title": "Chef de groupe",
-            "date": "2020",
-            "description": "ER av 81-2/20, Payerne, 100%"
-        },
-        "5": {
-            "title": "Customer Service Representative",
-            "date": "2021",
-            "description": "Digitec Galaxus AG, Lausanne, 100%"
-        },
-        "6": {
-            "title": "Customer Service Representative",
-            "date": "2021-23",
-            "description": "Digitec Galaxus AG, Lausanne, 20-40%"
-        }
+    "2": {
+      "title": "Maturité professionnelle commerciale",
+      "date": "2019",
+      "description": "GYB, Payerne"
     },
-    "websiteSectionTitles": {
-        "1": {
-          "title": "Inspirations",
-          "icon": "Inspirations"
-        },
-        "2": {
-          "title": "Couleurs",
-          "icon": "Colors"
-        },
-        "3": {
-          "title": "Typographie",
-          "icon": "Typography"
-        },
-        "4": {
-          "title": "Technologies",
-          "icon": "Technology"
-        }
-      },
-      "skillsSectionTitles": {
-        "1": {
-          "title": "Développement",
-          "icon": "Devlopment"
-        },
-        "2": {
-          "title": "Création",
-          "icon": "Creation"
-        }
-      }
+    "3": {
+      "title": "Brevet de promotion sous-officier",
+      "date": "2020",
+      "description": "ER av 81-2/20, Payerne"
+    },
+    "4": {
+      "title": "Bachelor en Ingénierie des médias",
+      "date": "2024",
+      "description": "HEIG-VD, Yverdon-les-Bains"
+    }
+  },
+  "experience": {
+    "1": {
+      "title": "Stagiaire 3+1",
+      "date": "2018-19",
+      "description": "Police cantonale Fribourg, Granges-Paccot, 100%"
+    },
+    "2": {
+      "title": "Employé d’administration",
+      "date": "2019",
+      "description": "Police cantonale Fribourg, Granges-Paccot, 100%"
+    },
+    "3": {
+      "title": "Ordonnance de bureau",
+      "date": "2020",
+      "description": "ER av 81-1/20, Payerne, 100%"
+    },
+    "4": {
+      "title": "Chef de groupe",
+      "date": "2020",
+      "description": "ER av 81-2/20, Payerne, 100%"
+    },
+    "5": {
+      "title": "Customer Service Representative",
+      "date": "2021",
+      "description": "Digitec Galaxus AG, Lausanne, 100%"
+    },
+    "6": {
+      "title": "Customer Service Representative",
+      "date": "2021-23",
+      "description": "Digitec Galaxus AG, Lausanne, 20-40%"
+    }
+  },
+  "websiteSectionTitles": {
+    "1": {
+      "title": "Inspirations",
+      "icon": "Inspirations"
+    },
+    "2": {
+      "title": "Couleurs",
+      "icon": "Colors"
+    },
+    "3": {
+      "title": "Typographie",
+      "icon": "Typography"
+    },
+    "4": {
+      "title": "Technologies",
+      "icon": "Technology"
+    }
+  },
+  "skillsSectionTitles": {
+    "1": {
+      "title": "Développement",
+      "icon": "Devlopment"
+    },
+    "2": {
+      "title": "Création",
+      "icon": "Creation"
+    }
+  },
+  "colors": {
+    "1": {
+      "title": "Bleu",
+      "hex": "#0006A2",
+      "border": "false"
+    },
+    "2": {
+      "title": "Bleu foncé",
+      "hex": "#000229",
+      "border": "false"
+    },
+    "3": {
+      "title": "Rouge",
+      "hex": "#BF2626",
+      "border": "false"
+    },
+    "4": {
+      "title": "Noir",
+      "hex": "#000000",
+      "border": "false"
+    },
+    "5": {
+      "title": "Gris",
+      "hex": "#ECECEC",
+      "border": "true"
+    },
+    "6": {
+      "title": "Blanc",
+      "hex": "#FFFFFF",
+      "border": "true"
+    }
+  },
+  "typo": {
+    "1": {
+      "title": "SF Pro - Bold",
+      "usage": "Titre / Sous-titre",
+      "font-family": "SF-Pro",
+      "fontWeight": "bold"
+    },
+    "2": {
+      "title": "SF Pro - Regular",
+      "usage": "Corps / Paragraphe",
+      "fontWeight": "normal"
+    }
+  },
+  "technologies": {
+    "1": {
+      "title": "Développement",
+      "description": "Vue.js",
+      "icon": "Vue"
+    },
+    "2": {
+      "title": "Déploiement",
+      "description": "GitHub Pages",
+      "icon": "GitHub"
+    }
+  }
 }
