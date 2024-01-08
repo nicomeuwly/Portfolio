@@ -5,13 +5,14 @@ import data from "../data.json";
 export default {
   name: "ToolsWindow",
   components: {
-    WindowSidePanel
+    WindowSidePanel,
   },
   data() {
     return {
-      activeSection: 'Devlopment',
+      activeSection: "Devlopment",
+      hoverSection: "",
       titles: data.skillsSectionTitles,
-    }
+    };
   },
   methods: {
     receiveDataFromChild(data) {
@@ -23,6 +24,9 @@ export default {
     isActiveSection(section) {
       return this.activeSection === section;
     },
+    isHoveredSection(section) {
+      return this.hoverSection === section;
+    },
   },
 };
 </script>
@@ -31,25 +35,42 @@ export default {
   <WindowSidePanel @child-to-parent="receiveDataFromChild">
     <template v-slot:left-side-panel>
       <ul>
-        <li v-for="title in titles" :key="title" @click="setActiveSection(title.icon)"
-          :class="{ active: isActiveSection(title.icon) }">
-          <img :src="!isActiveSection(title.icon) ? '/Portfolio/img/icons/' + title.icon + '-Icon.svg' : '/Portfolio/img/icons/' + title.icon + '-Icon-Active.svg'" :alt="title.icon + ' Icon'" />
+        <li
+          v-for="title in titles"
+          :key="title"
+          @click="setActiveSection(title.icon)"
+          :class="{ active: isActiveSection(title.icon) }"
+          @mouseover="hoverSection = title.icon"
+          @mouseout="hoverSection = ''"
+        >
+          <img
+            :src="
+              isActiveSection(title.icon) || isHoveredSection(title.icon)
+                ? '/Portfolio/img/icons/' + title.icon + '-Icon-Active.svg'
+                : '/Portfolio/img/icons/' + title.icon + '-Icon.svg'
+            "
+            :alt="title.icon + ' Icon'"
+          />
           {{ title.title }}
         </li>
       </ul>
     </template>
     <template v-slot:right-side-panel>
-      <div v-show="activeSection === 'Devlopment'" id="inspiration-container" class="section-container">
+      <div
+        v-show="activeSection === 'Devlopment'"
+        id="inspiration-container"
+        class="section-container"
+      >
         <h1>Développement</h1>
-        <div class="content-container">
-
-        </div>
+        <div class="content-container"></div>
       </div>
-      <div v-show="activeSection === 'Creation'" id="colors-container" class="section-container">
+      <div
+        v-show="activeSection === 'Creation'"
+        id="colors-container"
+        class="section-container"
+      >
         <h1>Création</h1>
-        <div class="content-container">
-
-        </div>
+        <div class="content-container"></div>
       </div>
     </template>
   </WindowSidePanel>
@@ -70,6 +91,11 @@ li {
   display: flex;
   align-items: center;
   list-style: none;
+}
+
+li:hover {
+  color: var(--white);
+  cursor: pointer;
 }
 
 li img {
@@ -94,4 +120,5 @@ li.active {
 
 h1 {
   color: var(--white);
-}</style>
+}
+</style>

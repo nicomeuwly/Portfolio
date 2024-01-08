@@ -14,16 +14,16 @@ export default {
     TypoElement,
     TechnoElement,
     MainButton,
-},
+  },
   data() {
     return {
-      activeSection: 'Inspirations',
-      hoverSection: '',
+      activeSection: "Inspirations",
+      hoverSection: "",
       titles: data.websiteSectionTitles,
       colors: data.colors,
       typographies: data.typo,
       technologies: data.technologies,
-    }
+    };
   },
   methods: {
     receiveDataFromChild(data) {
@@ -46,45 +46,100 @@ export default {
   <WindowSidePanel @child-to-parent="receiveDataFromChild">
     <template v-slot:left-side-panel>
       <ul>
-        <li v-for="title in titles" :key="title" @click="setActiveSection(title.icon)"
-          :class="{ active: isActiveSection(title.icon) }" @mouseover="hoverSection = title.icon" @mouseout="hoverSection = ''">
+        <li
+          v-for="title in titles"
+          :key="title"
+          @click="setActiveSection(title.icon)"
+          :class="{ active: isActiveSection(title.icon) }"
+          @mouseover="hoverSection = title.icon"
+          @mouseout="hoverSection = ''"
+        >
           <img
-            :src="isActiveSection(title.icon) || isHoveredSection(title.icon) ? '/Portfolio/img/icons/' + title.icon + '-Icon-Active.svg' : '/Portfolio/img/icons/' + title.icon + '-Icon.svg'"
-            :alt="title.icon + ' Icon'" />
+            :src="
+              isActiveSection(title.icon) || isHoveredSection(title.icon)
+                ? '/Portfolio/img/icons/' + title.icon + '-Icon-Active.svg'
+                : '/Portfolio/img/icons/' + title.icon + '-Icon.svg'
+            "
+            :alt="title.icon + ' Icon'"
+          />
           {{ title.title }}
         </li>
       </ul>
     </template>
     <template v-slot:right-side-panel>
       <!-- Section concernant les inspirations -->
-      <div v-show="activeSection === 'Inspirations'" id="inspiration-container" class="section-container">
+      <div
+        v-show="activeSection === 'Inspirations'"
+        id="inspiration-container"
+        class="section-container"
+      >
         <h1>Moodboard</h1>
         <div class="content-container">
-          <img id="moodboard" src="/Portfolio/img/Moodboard.png" alt="Moodboard" />
+          <img
+            id="moodboard"
+            src="/Portfolio/img/Moodboard.png"
+            alt="Moodboard"
+          />
         </div>
       </div>
       <!-- Section concernant les couleurs -->
-      <div v-show="activeSection === 'Colors'" id="colors-container" class="section-container">
+      <div
+        v-show="activeSection === 'Colors'"
+        id="colors-container"
+        class="section-container"
+      >
         <h1>Palette de couleurs</h1>
         <div class="content-container">
-          <ColorElement v-for="color in colors" :key="color.id" :color="color.hex" :colorName="color.title"
-            :border="color.border" class="color-element" />
-          <p class="comment">Des variantes de ces couleurs avec différents niveaux d’opacité ont également été utilisées.</p>
+          <ColorElement
+            v-for="color in colors"
+            :key="color.id"
+            :color="color.hex"
+            :colorName="color.title"
+            :border="color.border"
+            class="color-element"
+          />
+          <p class="comment">
+            Des variantes de ces couleurs avec différents niveaux d’opacité ont
+            également été utilisées.
+          </p>
         </div>
       </div>
       <!-- Section concernant la typographie -->
-      <div v-show="activeSection === 'Typography'" id="typography-container" class="section-container">
+      <div
+        v-show="activeSection === 'Typography'"
+        id="typography-container"
+        class="section-container"
+      >
         <h1>Typographie</h1>
         <div class="content-container">
-          <TypoElement v-for="typo in typographies" :key="typo.id" :title="typo.title" :usage="typo.usage" :fontWeight="typo.fontWeight"/>
+          <TypoElement
+            v-for="typo in typographies"
+            :key="typo.id"
+            :title="typo.title"
+            :usage="typo.usage"
+            :fontWeight="typo.fontWeight"
+          />
         </div>
       </div>
       <!-- Section concernant les technologies -->
-      <div v-show="activeSection === 'Technology'" id="technology-container" class="section-container">
+      <div
+        v-show="activeSection === 'Technology'"
+        id="technology-container"
+        class="section-container"
+      >
         <h1>Technologies</h1>
         <div class="content-container">
-          <TechnoElement v-for="techno in technologies" :key="techno.id" :title="techno.title" :description="techno.description" :image="techno.icon"/>
-          <MainButton :name="'GitHub repository'" :link="'https://github.com/nicomeuwly/Portfolio'" />
+          <TechnoElement
+            v-for="techno in technologies"
+            :key="techno.id"
+            :title="techno.title"
+            :description="techno.description"
+            :image="techno.icon"
+          />
+          <MainButton
+            :name="'GitHub repository'"
+            :link="'https://github.com/nicomeuwly/Portfolio'"
+          />
         </div>
       </div>
     </template>
