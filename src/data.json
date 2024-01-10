@@ -177,12 +177,12 @@
     "8": {
       "title": "PHP",
       "icon": "PHP",
-      "level": 1
+      "level": 2
     },
     "9": {
       "title": "MySQL",
       "icon": "MySQL",
-      "level": 1
+      "level": 2
     },
     "10": {
       "title": "MongoDB",
@@ -192,7 +192,7 @@
     "11": {
       "title": "GitHub",
       "icon": "GitHub",
-      "level": 2
+      "level": 3
     }
   },
   "creationSkills": {

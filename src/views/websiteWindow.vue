@@ -77,7 +77,7 @@ export default {
         <div class="content-container">
           <img
             id="moodboard"
-            src="/Portfolio/img/Moodboard.png"
+            src="/img/Moodboard.png"
             alt="Moodboard"
           />
         </div>
