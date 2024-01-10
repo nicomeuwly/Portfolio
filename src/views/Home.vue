@@ -4,6 +4,7 @@ import LandingWindow from "./landingWindow.vue";
 import AboutWindow from "./aboutWindow.vue";
 import PathWindow from "./pathWindow.vue";
 import JobsWindow from "./jobsWindow.vue";
+import JobsWindowGame from "./jobsWindowGame.vue";
 import ToolsWindow from "./toolsWindow.vue";
 import WebsiteWindow from "./websiteWindow.vue";
 import Background from "@/components/background.vue";
@@ -16,6 +17,7 @@ export default {
     AboutWindow,
     PathWindow,
     JobsWindow,
+    JobsWindowGame,
     ToolsWindow,
     WebsiteWindow,
     Background
@@ -56,11 +58,8 @@ export default {
       this.isWindowOpen = true;
       this.activeWindowId = id;
     },
-    addClickFunctionAvatar() {
-      const avatar = document.querySelector(".avatar");
-      avatar.addEventListener("click", () => {
-        this.openWindow(0);
-      });
+    handleOpenWindow(id) {
+      this.openWindow(id);
     },
     openLandingWindowAfterLoading() {
       setTimeout(() => {
@@ -69,7 +68,6 @@ export default {
     },
   },
   mounted() {
-    this.addClickFunctionAvatar();
     this.openLandingWindowAfterLoading();
   },
 };
@@ -104,6 +102,14 @@ export default {
       class="window"
       v-if="isWindowOpen && activeWindowId === 3"
       @parent-to-grandparent="receiveDataFromParent"
+      @open-game="handleOpenWindow"
+      :activeWindow="activeWindowId"
+    />
+    <JobsWindowGame
+      class="window"
+      v-if="isWindowOpen && activeWindowId === 12"
+      @parent-to-grandparent="receiveDataFromParent"
+      :activeWindow="activeWindowId"
     />
     <ToolsWindow
       class="window"
@@ -116,7 +122,7 @@ export default {
       @parent-to-grandparent="receiveDataFromParent"
     />
   </div>
-  <Background />
+  <Background @open-landing="handleOpenWindow"/>
 </template>
 
 <style>

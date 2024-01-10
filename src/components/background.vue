@@ -1,6 +1,11 @@
 <script>
 export default {
   name: "Background",
+  methods: {
+    openLanding(id) {
+      this.$emit("open-landing", id);
+    },
+  },
 };
 </script>
 
@@ -10,7 +15,7 @@ export default {
     <img src="/img/Logo.svg" alt="Logo Nicolas Meuwly" id="logo" />
     <img src="/img/Corner.svg" alt="Top right corner" class="corner top-right" />
     <img src="/img/Corner.svg" alt="Bottom left corner" class="corner bottom-left" />
-    <img src="/img/Avatar.png" alt="Bottom right corner" class="avatar bottom-right" />
+    <img src="/img/Avatar.png" alt="Bottom right corner" class="avatar bottom-right" @click="openLanding(0)"/>
   </div>
   <div id="background-gradients">
     <div id="gradient1"></div>
