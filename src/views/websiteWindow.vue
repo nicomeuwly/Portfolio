@@ -190,19 +190,18 @@ li.active {
   padding: 5%;
   display: flex;
   justify-content: center;
+  gap: 30px;
 }
 #colors-container .content-container {
   flex-direction: row;
   flex-wrap: wrap;
-  gap: 30px;
 }
 #typography-container .content-container {
   flex-direction: colomn;
-  gap: 5%;
+  flex-wrap: wrap;
 }
 #technology-container .content-container {
   flex-wrap: wrap;
-  gap: 30px;
 }
 h1 {
   color: var(--white);
