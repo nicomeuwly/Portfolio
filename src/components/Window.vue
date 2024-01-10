@@ -56,10 +56,13 @@ export default {
   background-color: var(--blue-dark-2);
   backdrop-filter: blur(10px);
 }
+#close-button {
+  cursor: pointer;
+  transition: fill 0.2s ease-in-out, stroke 0.2s ease-in-out;
+}
 #close-button:hover {
   fill: var(--red);
   stroke: var(--red);
-  transition: fill 0.3s ease, stroke 0.3s ease;
 }
 #window-content {
   margin: 0% 10% 15% 10%;

@@ -27,6 +27,7 @@ div {
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border 0.2s ease-in-out;
 }
 div:hover {
   background-color: var(--white-2);
