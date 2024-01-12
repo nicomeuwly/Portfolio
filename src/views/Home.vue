@@ -110,7 +110,6 @@ export default {
       v-if="isWindowOpen && activeWindowId === 12"
       @parent-to-grandparent="receiveDataFromParent"
       :activeWindow="activeWindowId"
-      :windowWidth="windowWidth"
     />
     <ToolsWindow
       class="window"
