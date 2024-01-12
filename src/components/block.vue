@@ -20,6 +20,10 @@ export default {
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  transition: transform 0.5s ease-in-out
+}
+.block:hover {
+  transform: translateY(-15px);
 }
 span {
   font-size: 4rem;

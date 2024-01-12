@@ -71,6 +71,22 @@ export default {
         return "/Portfolio/img/character/Anim-0.png"; // Image par défaut
       }
     },
+    characterX() {
+      return this.position.x; // Propriété calculée pour la position x
+    },
+    characterIsJumping() {
+      return this.isJumping; // Propriété calculée pour l'état de saut
+    },
+  },
+  watch: {
+    characterX(newValue) {
+      // Émettre un événement au parent avec la nouvelle valeur de la position x
+      this.$emit("update-position-x", newValue);
+    },
+    characterIsJumping(newValue) {
+      // Émettre un événement au parent avec la nouvelle valeur de l'état de saut
+      this.$emit("update-is-jumping", newValue);
+    },
   },
   created() {
     // Écouter les événements de saut et de déplacement
