@@ -1,6 +1,7 @@
 <script>
 export default {
   name: "Background",
+  emits: ["open-landing"],
   methods: {
     openLanding(id) {
       this.$emit("open-landing", id);

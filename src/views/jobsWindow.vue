@@ -14,55 +14,42 @@ export default {
       this.$emit("parent-to-grandparent", data);
     },
     openGame(id) {
+      window.removeEventListener("keydown", this.handleKeyDown);
+      window.removeEventListener("keyup", this.handleKeyUp);
       this.$emit("open-game", id);
     },
-    handleKeyPress(key) {
-      switch (key) {
-        case "ArrowLeft":
-        case "a":
-          this.$refs.moveLeft.style.backgroundColor = "var(--white-2)";
-          break;
-        case "ArrowRight":
-        case "d":
-          this.$refs.moveRight.style.backgroundColor = "var(--white-2)";
-          break;
-        case " ":
-          this.$refs.jump.style.backgroundColor = "var(--white-2)";
-          break;
+    handleKeyDown(e) {
+      if (e.key === "ArrowLeft" || e.key === "a") {
+        this.$refs.moveLeft.classList.add("pressed");
+      }
+      if (e.key === "ArrowRight" || e.key === "d") {
+        this.$refs.moveRight.classList.add("pressed");
+      }
+      if (e.key === " ") {
+        this.$refs.jump.classList.add("pressed");
       }
     },
-    handleKeyUp(key) {
-      switch (key) {
-        case "ArrowLeft":
-        case "a":
-          this.$refs.moveLeft.style.backgroundColor = "";
-          break;
-        case "ArrowRight":
-        case "d":
-          this.$refs.moveRight.style.backgroundColor = "";
-          break;
-        case " ":
-          this.$refs.jump.style.backgroundColor = "";
-          break;
+    handleKeyUp(e) {
+      if (e.key === "ArrowLeft" || e.key === "a") {
+        this.$refs.moveLeft.classList.remove("pressed");
+      }
+      if (e.key === "ArrowRight" || e.key === "d") {
+        this.$refs.moveRight.classList.remove("pressed");
+      }
+      if (e.key === " ") {
+        this.$refs.jump.classList.remove("pressed");
       }
     },
   },
-  mounted() {
-    if (this.activeWindow === 3) {
-      window.addEventListener("keydown", (e) => {
-        this.handleKeyPress(e.key);
-      });
-      window.addEventListener("keyup", (e) => {
-        this.handleKeyUp(e.key);
-      });
-    }
-    console.log(this.activeWindow);
+  created() {
+    window.addEventListener("keydown", this.handleKeyDown);
+    window.addEventListener("keyup", this.handleKeyUp);
   },
 };
 </script>
 
 <template>
-  <Window @child-to-parent="receiveDataFromChild">
+  <Window @child-to-parent="receiveDataFromChild" >
     <div class="controls">
       <div class="control-container move">
         <h2>Se déplacer</h2>
@@ -143,7 +130,7 @@ h2 {
   color: var(--white);
 }
 
-.material-symbols-rounded {
-  font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 24;
+.pressed {
+  background-color: var(--white-2);
 }
 </style>

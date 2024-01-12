@@ -1,25 +1,35 @@
 <script>
 export default {
   name: "Block",
-  props: {
-    position: Object,
-  },
 };
 </script>
 
 <template>
-  <div
-    class="block"
-    :style="{ left: position.x + 'px', top: position.y + 'px' }"
-  >
-    🧱
+  <div class="block">
+    <span class="material-symbols-rounded">question_mark</span>
   </div>
 </template>
 
 <style scoped>
 .block {
-  position: absolute;
+  width: 120px;
+  height: 120px;
+  background-color: var(--white);
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+span {
   font-size: 4rem;
-  color: brown;
+  color: var(--blue);
+  margin: 0;
+}
+img {
+  width: 20px;
+  height: 20px;
+  position: relative;
+  z-index: 0;
 }
 </style>
