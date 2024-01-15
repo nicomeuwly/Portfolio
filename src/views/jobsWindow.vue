@@ -6,9 +6,6 @@ export default {
   components: {
     Window,
   },
-  props: {
-    activeWindow: Number,
-  },
   methods: {
     receiveDataFromChild(data) {
       this.$emit("parent-to-grandparent", data);

@@ -231,5 +231,103 @@
       "icon": "Canva",
       "level": 3
     }
+  },
+  "jobs": {
+    "1": {
+      "title": "CO2-Centuries",
+      "description": "CO2-Centuries est un projet réalisé dans le cadre du cours de \"Visualisation de données\" à la HEIG-VD. Le but était de représenter les émissions de CO2 par pays et par année et le tout sous forme de carte du monde.",
+      "image": "CO2-Centuries.png",
+      "tags": [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "D3.js"
+      ],
+      "links": [
+        {
+          "title": "GitHub Repository",
+          "url": "https://github.com/nicomeuwly/CO2-Centuries"
+        },
+        {
+          "title": "Site",
+          "url": "https://co2-centuries.netlify.app/"
+        }
+      ]
+    },
+    "2": {
+      "title": "On en parle",
+      "description": "Dans le cadre du projet d'articulaion, dernier étape pour achever la 2ème année en Ingénierie des médias à la HEIG-VD, nous avons réalisé un site web pour l'émission \"On en parle\" de la RTS. Le but était de faciliter la gestion des questions des auditeurs lors de la diffusion de l'émission. Pour ce faire, nous séparer le site en 2 parties, une partie pour les auditeurs et une partie pour les administrateurs. La partie \"auditeur\" permet de poser une question et d'écouter l'émission. La partie \"administrateur\" permet de gérer les questions, de les valider et de les supprimer. Le site est réalisé avec Vue.js et Laravel. Le site n'est malheureusement plus en ligne.",
+      "image": "OnEnParle.png",
+      "tags": [
+        "Vue.js",
+        "Laravel",
+        "CSS"
+      ],
+      "links": [
+        {
+          "title": "GitHub Repository",
+          "url": "https://github.com/WinnieTheBloue/on-en-parle"
+        },
+        {
+          "title": "Rapport du projet",
+          "url": "/Portfolio/docs/ProjetArticulation_RapportFinal_FaceWho_OnEnParle_2023.pdf"
+        }
+      ]
+    },
+    "3": {
+      "title": "WageWizard",
+      "description": "Travaillant à temps partiel et étant payé à l'heure, je souhaitais un outil me permettant de calculer mon salaire en temps réel en fonction des heures travaillées. J'ai alors commencer à imaginer une application web répondant à mes besoins sous le nom WageWizard. Il est possible d'avoir un aperçu de l'app via la maquette Figma et du backend via le repo GitHub. Le backend est réalisé avec Node.js et Express.js et la base de données avec MongoDB. Le frontend n'est pas encore commencé.",
+      "image": "WageWizard.png",
+      "tags": [
+        "JavaScript",
+        "Express.js",
+        "MongoDB",
+        "Figma"
+      ],
+      "links": [
+        {
+          "title": "GitHub Repository",
+          "url": "https://github.com/nicomeuwly/WageWizard-API"
+        },
+        {
+          "title": "Maquette Figma",
+          "url": "https://www.figma.com/proto/EfXsqYWMHirkHsGeKNbdP1/WageWizard?page-id=0%3A1&node-id=1-2&starting-point-node-id=1%3A2&mode=design&t=QbzIBZ7i8XdULDHX-1"
+        }
+      ]
+    },
+    "4": {
+      "title": "Fan2Minecraft",
+      "description": "Dans le cadre du cours \"E-Commerce\" à la HEIG-VD, nous avons dû réaliser un projet web autour d’un site e-commerce. Nous avons choisi de créer un site de vente de produits dérivés du jeu Minecraft. Le site a été réalisé avec Wordpress et WooCommerce avec l'aide de plusieurs plugins. Le site n'est malheureusement plus en ligne mais il est possible d'avoir un aperçu via le rapport du projet.",
+      "image": "Fan2Minecraft.png",
+      "tags": [
+        "Wordpress",
+        "E-Commerce",
+        "Marketing",
+        "SEO"
+      ],
+      "links": [
+        {
+          "title": "Rapport du projet",
+          "url": "/Portfolio/docs/Rapport_Fan2Minecraft_KevinBourgeois_GloryMasungi_NicolasMeuwly_M50-1.pdf"
+        }
+      ]
+    },
+    "5": {
+      "title": "Pronumeric",
+      "description": "Dans le cadre du cours \"Marketing Digital\" à la HEIG-VD, nous avons dû réaliser un projet web autout d'un blog d'actualité. Nous avons choisi de créer un blog autour de l'actualité sur les nouvelles technologies. Le site a été réalisé avec Wordpress avec l'aide de plusieurs plugins. Le site n'est malheureusement plus en ligne mais il est possible d'avoir un aperçu via le rapport du projet.",
+      "image": "Pronumeric.png",
+      "tags": [
+        "Wordpress",
+        "Blog",
+        "Marketing",
+        "SEO"
+      ],
+      "links": [
+        {
+          "title": "Rapport du projet",
+          "url": "/Portfolio/docs/RapportPronumeric_CrottiPablo_MeuwlyNicolas_M50_3_LE_TOUT.pdf"
+        }
+      ]
+    }
   }
 }

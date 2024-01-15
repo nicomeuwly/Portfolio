@@ -10,9 +10,6 @@ export default {
     Character,
     Block,
   },
-  props: {
-    activeWindow: Number,
-  },
   data() {
     return {
       blocks: [{ id: 1 }, { id: 2 }, { id: 3 }, { id: 4 }, { id: 5 }],
@@ -20,24 +17,27 @@ export default {
         x: 0,
         y: 80,
       },
+      defaultCharacterHeight: 0,
       gameWidth: 0,
       ready: false,
       characterWidth: 0,
       characterIsJumping: false,
       characterCurrentPosition: 0,
+      jumpLevel: 0,
     };
   },
   methods: {
     receiveDataFromChild(data) {
       this.$emit("parent-to-grandparent", data);
     },
+    openJob(id, blockId) {
+      this.$emit("open-job", id, blockId);
+    },
     handleCharacterLeftPosition(newValue) {
       this.characterCurrentPosition = newValue;
-      console.log(this.characterCurrentPosition);
     },
     handleCharacterJumping(newValue) {
       this.characterIsJumping = newValue;
-      console.log(this.characterIsJumping);
     },
     getBlockPositions() {
       this.$nextTick(() => {
@@ -51,22 +51,54 @@ export default {
         }
       });
     },
-    setGameWidth() {
+    setGameDimensions() {
       this.$nextTick(() => {
+        const floorPosition = this.$refs.floor.getBoundingClientRect();
+        const marginUpAndDown = window.innerHeight * 0.63;
+        const characterContainerHeight = this.$refs.characterContainer.getBoundingClientRect().height;
+        this.characterPosition.y = floorPosition.top - marginUpAndDown;
+        this.defaultCharacterHeight = floorPosition.top - marginUpAndDown;
         const image = new Image();
         image.src = "/Portfolio/img/character/Anim-0.png";
         image.onload = () => {
           this.characterWidth = image.width;
+          this.jumpLevel = characterContainerHeight - image.height;
           this.gameWidth = window.innerWidth * 0.56 - image.width;
           this.ready = true;
         };
       });
     },
+    characterHitBlock() {
+      const characterMidPosition = this.characterCurrentPosition + (this.characterWidth / 2);
+      this.blocks.forEach((block) => {
+        if (
+          characterMidPosition >= block.left &&
+          characterMidPosition <= block.left + 120 &&
+          this.characterIsJumping
+        ) {
+          const blockElement = document.getElementById("block" + block.id);
+          setTimeout(() => {
+            blockElement.classList.add("hit");
+          }, 200);
+          setTimeout(() => {
+            blockElement.classList.remove("hit");
+            this.openJob(13, block.id);
+          }, 700);
+        }
+      });
+    },
   },
   mounted() {
     this.getBlockPositions();
-    this.setGameWidth();
+    this.setGameDimensions();
   },
+  watch: {
+    characterIsJumping(newValue) {
+      if (newValue) {
+        this.characterHitBlock();
+      }
+    },
+  }
 };
 </script>
 
@@ -74,17 +106,14 @@ export default {
   <Window @child-to-parent="receiveDataFromChild">
     <div class="game-container" ref="gameContainer">
       <div class="block-container" ref="blockContainer">
-        <Block v-for="block in blocks" :key="block.id" />
+        <Block v-for="block in blocks" :key="block.id" :id="'block' + block.id" @click="openJob(13, block.id)"/>
       </div>
-      <Character
-        @update-position-x="handleCharacterLeftPosition"
-        @update-is-jumping="handleCharacterJumping"
-        v-if="ready"
-        :position="characterPosition"
-        :maxLeftPosition="0"
-        :maxRightPosition="gameWidth"
-      />
-      <div class="floor"></div>
+      <div class="character-container" ref="characterContainer">
+        <Character @update-position-x="handleCharacterLeftPosition" @update-is-jumping="handleCharacterJumping"
+          v-if="ready" :position="characterPosition" :maxLeftPosition="0" :maxRightPosition="gameWidth"
+          :defaultHeight="defaultCharacterHeight" :jumpValue="jumpLevel" />
+      </div>
+      <div class="floor" ref="floor"></div>
     </div>
   </Window>
 </template>
@@ -97,6 +126,7 @@ export default {
   flex-wrap: wrap;
   align-content: space-between;
 }
+
 .block-container {
   width: 100%;
   display: flex;
@@ -104,10 +134,23 @@ export default {
   position: relative;
   top: 20px;
 }
+
+.character-container {
+  width: 100%;
+  height: calc(100% - 120px);
+  position: relative;
+  top: 20px;
+}
+
 .floor {
   width: 100%;
   height: 20px;
   background-color: var(--white);
   border-radius: 20px;
 }
+
+.hit {
+  transform: translateY(-15px);
+}
+
 </style>

@@ -5,6 +5,7 @@ import AboutWindow from "./aboutWindow.vue";
 import PathWindow from "./pathWindow.vue";
 import JobsWindow from "./jobsWindow.vue";
 import JobsWindowGame from "./jobsWindowGame.vue";
+import JobWindow from "./jobWindow.vue";
 import ToolsWindow from "./toolsWindow.vue";
 import WebsiteWindow from "./websiteWindow.vue";
 import Background from "@/components/background.vue";
@@ -18,9 +19,10 @@ export default {
     PathWindow,
     JobsWindow,
     JobsWindowGame,
+    JobWindow,
     ToolsWindow,
     WebsiteWindow,
-    Background
+    Background,
 },
   data() {
     return {
@@ -48,6 +50,7 @@ export default {
       },
       isWindowOpen: false,
       activeWindowId: null,
+      jobId: null,
     };
   },
   methods: {
@@ -60,6 +63,14 @@ export default {
     },
     handleOpenWindow(id) {
       this.openWindow(id);
+    },
+    handleOpenJob(id, blockId) {
+      this.jobId = blockId;
+      this.openWindow(id);
+    },
+    closeJobWindow(data) {
+      this.isWindowOpen = data;
+      this.openWindow(12);
     },
     openLandingWindowAfterLoading() {
       setTimeout(() => {
@@ -103,13 +114,18 @@ export default {
       v-if="isWindowOpen && activeWindowId === 3"
       @parent-to-grandparent="receiveDataFromParent"
       @open-game="handleOpenWindow"
-      :activeWindow="activeWindowId"
     />
     <JobsWindowGame
       class="window"
       v-if="isWindowOpen && activeWindowId === 12"
       @parent-to-grandparent="receiveDataFromParent"
-      :activeWindow="activeWindowId"
+      @open-job="handleOpenJob"
+    />
+    <JobWindow
+      class="window"
+      v-if="isWindowOpen && activeWindowId === 13"
+      @parent-to-grandparent="closeJobWindow"
+      :jobId="jobId"
     />
     <ToolsWindow
       class="window"

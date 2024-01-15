@@ -3,8 +3,10 @@ export default {
   name: "Character",
   props: {
     position: Object,
+    defaultHeight: Number,
     maxLeftPosition: Number,
     maxRightPosition: Number,
+    jumpValue: Number,
   },
   data() {
     return {
@@ -53,7 +55,7 @@ export default {
     },
     handleTransitionEnd() {
       // Réinitialiser la position verticale à la fin de l'animation de saut
-      this.position.y = 80; // Ou toute valeur par défaut que vous souhaitez
+      this.position.y = this.defaultHeight; // Ou toute valeur par défaut que vous souhaitez
     },
   },
   computed: {
@@ -147,12 +149,13 @@ export default {
 
 <style scoped>
 .character {
+  width: 150px;
   position: relative;
   transition: transform 0.5s ease-in-out; /* Animation de transition pour le saut */
 }
 
 .jumping {
-  transform: translateY(-130px); /* Ajustez la hauteur du saut */
+  transform: translateY(calc(-1px * v-bind(jumpValue))); /* Ajustez la hauteur du saut */
 }
 
 .reversed {

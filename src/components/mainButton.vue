@@ -15,6 +15,7 @@ export default {
 <style scoped>
 div {
   min-width: 100px;
+  max-width: 250px;
   height: 60px;
   padding-left: 20px;
   padding-right: 20px;
@@ -27,6 +28,7 @@ div {
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
   transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border 0.2s ease-in-out;
 }
 div:hover {
