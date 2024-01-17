@@ -17,7 +17,7 @@ export default {
   },
   data() {
     return {
-      activeSection: "Inspirations",
+      activeSection: "emoji_objects",
       hoverSection: "",
       titles: data.websiteSectionTitles,
       colors: data.colors,
@@ -54,14 +54,7 @@ export default {
           @mouseover="hoverSection = title.icon"
           @mouseout="hoverSection = ''"
         >
-          <img
-            :src="
-              isActiveSection(title.icon) || isHoveredSection(title.icon)
-                ? '/Portfolio/img/icons/' + title.icon + '-Icon-Active.svg'
-                : '/Portfolio/img/icons/' + title.icon + '-Icon.svg'
-            "
-            :alt="title.icon + ' Icon'"
-          />
+          <span class="material-symbols-rounded">{{ title.icon }}</span>
           {{ title.title }}
         </li>
       </ul>
@@ -69,22 +62,18 @@ export default {
     <template v-slot:right-side-panel>
       <!-- Section concernant les inspirations -->
       <div
-        v-show="activeSection === 'Inspirations'"
+        v-show="activeSection === 'emoji_objects'"
         id="inspiration-container"
         class="section-container"
       >
         <h1>Moodboard</h1>
         <div class="content-container">
-          <img
-            id="moodboard"
-            src="/img/Moodboard.png"
-            alt="Moodboard"
-          />
+          <img id="moodboard" src="/img/Moodboard.png" alt="Moodboard" />
         </div>
       </div>
       <!-- Section concernant les couleurs -->
       <div
-        v-show="activeSection === 'Colors'"
+        v-show="activeSection === 'palette'"
         id="colors-container"
         class="section-container"
       >
@@ -106,7 +95,7 @@ export default {
       </div>
       <!-- Section concernant la typographie -->
       <div
-        v-show="activeSection === 'Typography'"
+        v-show="activeSection === 'text_fields'"
         id="typography-container"
         class="section-container"
       >
@@ -123,7 +112,7 @@ export default {
       </div>
       <!-- Section concernant les technologies -->
       <div
-        v-show="activeSection === 'Technology'"
+        v-show="activeSection === 'bolt'"
         id="technology-container"
         class="section-container"
       >
@@ -152,7 +141,7 @@ ul {
   flex-direction: column;
   justify-content: flex-start;
   align-items: left;
-  gap: 25px;
+  gap: 2rem;
 }
 
 li {
@@ -161,6 +150,12 @@ li {
   display: flex;
   align-items: center;
   list-style: none;
+  gap: 1rem;
+}
+
+.material-symbols-rounded {
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+  font-size: 3rem;
 }
 
 li:hover {
@@ -180,17 +175,29 @@ li.active {
 
 .section-container {
   width: 100%;
-  height: 100%;
+  height: 90%;
+  background-color: var(--blue-dark);
   margin-top: 5%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 5%;
 }
 .content-container {
-  padding: 5%;
+  width: 90%;
+  max-height: 450px;
+  min-height: 188px;
   display: flex;
   justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  overflow-x: hidden;
+  overflow-y: auto;
   gap: 30px;
+}
+
+.content-container::-webkit-scrollbar {
+  display: none;
 }
 #colors-container .content-container {
   flex-direction: row;

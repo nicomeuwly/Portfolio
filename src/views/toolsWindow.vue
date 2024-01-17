@@ -11,7 +11,7 @@ export default {
   },
   data() {
     return {
-      activeSection: "Devlopment",
+      activeSection: "code",
       hoverSection: "",
       titles: data.skillsSectionTitles,
       devSkills: data.devSkills,
