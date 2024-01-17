@@ -83,7 +83,12 @@ export default {
   top: 0;
   right: 0;
 }
+#right-side-panel-content {
+  width: 100%;
+  height: 100%;
+}
 #left-side-panel {
   padding-top: 5%;
+  width: 30%;
 }
 </style>

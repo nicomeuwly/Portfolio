@@ -47,14 +47,7 @@ export default {
           @mouseover="hoverSection = title.icon"
           @mouseout="hoverSection = ''"
         >
-          <img
-            :src="
-              isActiveSection(title.icon) || isHoveredSection(title.icon)
-                ? '/Portfolio/img/icons/' + title.icon + '-Icon-Active.svg'
-                : '/Portfolio/img/icons/' + title.icon + '-Icon.svg'
-            "
-            :alt="title.icon + ' Icon'"
-          />
+          <span class="material-symbols-rounded">{{ title.icon }}</span>
           {{ title.title }}
         </li>
       </ul>
@@ -62,7 +55,7 @@ export default {
     <template v-slot:right-side-panel>
       <!-- Section concernant les compétences en développement -->
       <div
-        v-show="activeSection === 'Devlopment'"
+        v-show="activeSection === 'code'"
         id="development-container"
         class="section-container"
       >
@@ -79,7 +72,7 @@ export default {
       </div>
       <!-- Section concernant les compétences en création -->
       <div
-        v-show="activeSection === 'Creation'"
+        v-show="activeSection === 'brush'"
         id="creation-container"
         class="section-container"
       >
@@ -104,7 +97,7 @@ ul {
   flex-direction: column;
   justify-content: flex-start;
   align-items: left;
-  gap: 25px;
+  gap: 2rem;
 }
 
 li {
@@ -113,17 +106,17 @@ li {
   display: flex;
   align-items: center;
   list-style: none;
+  gap: 1rem;
+}
+
+.material-symbols-rounded {
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+  font-size: 3rem;
 }
 
 li:hover {
   color: var(--white);
   cursor: pointer;
-}
-
-li img {
-  width: 40px;
-  height: 40px;
-  margin-right: 20px;
 }
 
 li.active {
@@ -132,32 +125,26 @@ li.active {
 
 .section-container {
   width: 100%;
-  height: 100%;
+  height: 90%;
+  background-color: var(--blue-dark);
   margin-top: 5%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 5%;
 }
 
 .content-container {
-  max-width: 760px;
-  
-  margin: 5%;
+  width: 90%;
+  max-height: 450px;
+  min-height: 188px;
   display: flex;
   justify-content: center;
-  
   flex-direction: row;
   flex-wrap: wrap;
-  gap: 40px 70px;
-}
-#development-container .content-container {
-  max-height: 440px;
   overflow-x: hidden;
   overflow-y: auto;
-}
-
-#creation-container .content-container{
-  height: 100%;
+  gap: 40px 70px;
 }
 
 .content-container::-webkit-scrollbar {

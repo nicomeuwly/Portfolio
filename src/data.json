@@ -74,11 +74,11 @@
   "skillsSectionTitles": {
     "1": {
       "title": "Développement",
-      "icon": "Devlopment"
+      "icon": "code"
     },
     "2": {
       "title": "Création",
-      "icon": "Creation"
+      "icon": "brush"
     }
   },
   "colors": {
