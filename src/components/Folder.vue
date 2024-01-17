@@ -27,20 +27,11 @@ export default {
   >
     <div class="folder-content">
       <img
-        :src="isHovered ? '/Portfolio/img/Folder-Hover.svg' : '/Portfolio/img/Folder.svg'"
-        alt="Folder"
-        :class="'folder-' + id"
+        :src="isHovered ? '/Portfolio/img/folders/Folder-'+ icon +'-Hover.svg' : '/Portfolio/img/folders/Folder-'+ icon +'.svg'"
+        alt="Content folder"
+        class="folder"
       />
     </div>
-    <img
-      :src="
-        isHovered
-          ? '/Portfolio/img/icons/' + icon + '-Icon-Hover.svg'
-          : '/Portfolio/img/icons/' + icon + '-Icon.svg'
-      "
-      :alt="icon + ' icon'"
-      class="folder-icon"
-    />
     <span class="folder-title" :class="{ hovered: isHovered }">{{
       title
     }}</span>
@@ -49,11 +40,11 @@ export default {
 
 <style scoped>
 .img-container {
-  width: 15%;
   display: flex;
   flex-direction: column;
   align-items: center;
   position: relative;
+  width: 12%;
 }
 
 .folder-content {
@@ -61,14 +52,12 @@ export default {
   z-index: 1;
 }
 
-.folder-icon {
-  position: absolute;
-  bottom: 30%;
-  z-index: 2;
+.folder {
+  width: 100%;
 }
 
 .folder-title {
-  margin-top: 10px;
+  margin-top: 5%;
   color: var(--white);
 }
 

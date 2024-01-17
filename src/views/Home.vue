@@ -29,7 +29,7 @@ export default {
       folders: {
         1: {
           title: "A PROPOS",
-          icon: "Info",
+          icon: "About",
         },
         2: {
           title: "PARCOURS",
@@ -143,14 +143,13 @@ export default {
 
 <style>
 #content {
-  margin: 150px;
   position: absolute;
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 2;
-  width: calc(100% - 300px);
-  height: calc(100% - 300px);
+  width: 100%;
+  height: 70%;
 }
 .window {
   position: absolute;

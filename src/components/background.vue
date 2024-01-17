@@ -6,47 +6,91 @@ export default {
     openLanding(id) {
       this.$emit("open-landing", id);
     },
+    setItemsPosition() {
+      const logo = this.$refs.logo;
+      const avatar = this.$refs.avatar;
+      const cornerTopRight = this.$refs.cornerTopRight;
+      const cornerBottomLeft = this.$refs.cornerBottomLeft;
+      const space = window.innerWidth * 0.03;
+      logo.style.top = `${space}px`;
+      logo.style.left = `${space}px`;
+      avatar.style.bottom = `${space}px`;
+      avatar.style.right = `${space}px`;
+      cornerTopRight.style.top = `${space}px`;
+      cornerTopRight.style.right = `${space}px`;
+      cornerBottomLeft.style.bottom = `${space}px`;
+      cornerBottomLeft.style.left = `${space}px`;
+    },
+    returnToHome() {
+      window.location.href = "/";
+    },
+  },
+  mounted() {
+    this.setItemsPosition();
+    window.addEventListener("resize", this.setItemsPosition);
   },
 };
 </script>
 
 <template>
-  
-  <div id="background-items">
-    <img src="/img/Logo.svg" alt="Logo Nicolas Meuwly" id="logo" />
-    <img src="/img/Corner.svg" alt="Top right corner" class="corner top-right" />
-    <img src="/img/Corner.svg" alt="Bottom left corner" class="corner bottom-left" />
-    <img src="/img/Avatar.png" alt="Bottom right corner" class="avatar bottom-right" @click="openLanding(0)"/>
-  </div>
-  <div id="background-gradients">
-    <div id="gradient1"></div>
-    <div id="gradient2"></div>
-    <div id="gradient3"></div>
+  <div id="background">
+    <div id="background-items">
+      <img src="/img/Logo.svg" alt="Logo Nicolas Meuwly" id="logo" ref="logo" @click="returnToHome"/>
+      <img
+        src="/img/Corner.svg"
+        alt="Top right corner"
+        class="corner top-right"
+        ref="cornerTopRight"
+      />
+      <img
+        src="/img/Corner.svg"
+        alt="Bottom left corner"
+        class="corner bottom-left"
+        ref="cornerBottomLeft"
+      />
+      <img
+        src="/img/Avatar.png"
+        alt="Bottom right corner"
+        class="avatar bottom-right"
+        ref="avatar"
+        @click="openLanding(0)"
+      />
+    </div>
+    <div id="background-gradients">
+      <div id="gradient1"></div>
+      <div id="gradient2"></div>
+      <div id="gradient3"></div>
+    </div>
   </div>
 </template>
 
 <style scoped>
+
+#background {
+  width: 100%;
+  height: 100%;
+}
 #background-items {
-  margin: 50px;
   position: absolute;
   z-index: 1;
-  width: calc(100% - 100px);
-  height: calc(100% - 100px);
+  width: 100%;
+  height: 100%;
 }
 
 #logo {
-  width: 80px;
-  height: 87px;
+  width: 5%;
+  aspect-ratio: 1/1;
+  position: absolute;
 }
 
 .corner {
-  width: 68px;
-  height: 68px;
+  width: 5%;
+  aspect-ratio: 1/1;
   position: absolute;
 }
 .avatar {
-  width: 100px;
-  height: 100px;
+  width: 5%;
+  aspect-ratio: 1/1;
   position: absolute;
   border-radius: 50%;
   border: 2px solid var(--white);
@@ -56,19 +100,9 @@ export default {
   background-color: transparent;
   transition: background-color 0.5s ease;
 }
-.top-right {
-  top: 0;
-  right: 0;
-}
 
 .bottom-left {
-  bottom: 0;
-  left: 0;
   transform: scale(-1, -1);
-}
-.bottom-right {
-  bottom: 0;
-  right: 0;
 }
 
 #background-gradients {

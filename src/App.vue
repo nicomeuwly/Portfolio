@@ -15,4 +15,11 @@ export default {
   </div>
 </template>
 
-<style></style>
+<style>
+#portfolio {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+}
+</style>
