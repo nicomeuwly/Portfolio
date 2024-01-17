@@ -54,8 +54,12 @@ export default {
     setGameDimensions() {
       this.$nextTick(() => {
         const floorPosition = this.$refs.floor.getBoundingClientRect();
+        const blockContainerHeight = this.$refs.blockContainer.offsetHeight;
+        const floorHeight = this.$refs.floor.offsetHeight;
+        const gameContainerHeight = this.$refs.gameContainer.offsetHeight;
         const marginUpAndDown = window.innerHeight * 0.63;
-        const characterContainerHeight = this.$refs.characterContainer.getBoundingClientRect().height;
+        this.$refs.characterContainer.style.height = gameContainerHeight - floorHeight - blockContainerHeight - 15 + "px";
+        const characterContainerHeight = this.$refs.characterContainer.offsetHeight;
         this.characterPosition.y = floorPosition.top - marginUpAndDown;
         this.defaultCharacterHeight = floorPosition.top - marginUpAndDown;
         const image = new Image();
@@ -63,7 +67,7 @@ export default {
         image.onload = () => {
           this.characterWidth = image.width;
           this.jumpLevel = characterContainerHeight - image.height;
-          this.gameWidth = window.innerWidth * 0.56 - image.width;
+          this.gameWidth = this.$refs.gameContainer.offsetWidth - this.characterWidth;
           this.ready = true;
         };
       });
@@ -137,14 +141,13 @@ export default {
 
 .character-container {
   width: 100%;
-  height: calc(100% - 120px);
   position: relative;
   top: 20px;
 }
 
 .floor {
   width: 100%;
-  height: 20px;
+  height: 3%;
   background-color: var(--white);
   border-radius: 20px;
 }

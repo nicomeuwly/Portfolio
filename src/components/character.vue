@@ -149,7 +149,7 @@ export default {
 
 <style scoped>
 .character {
-  width: 150px;
+  width: 10%;
   position: relative;
   transition: transform 0.5s ease-in-out; /* Animation de transition pour le saut */
 }
