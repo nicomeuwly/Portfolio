@@ -64,9 +64,9 @@ export default {
       if (this.isJumping) {
         return "/Portfolio/img/character/Anim-6.png";
       } else if (this.isMovingLeft) {
-        return "/Portfolio/img/character/Anim-1.png";
+        return "/Portfolio/img/character/Walk.gif";
       } else if (this.isMovingRight) {
-        return "/Portfolio/img/character/Anim-1.png";
+        return "/Portfolio/img/character/Walk.gif";
       } else if (this.isStandBy) {
         return "/Portfolio/img/character/Anim-0.png";
       } else {
@@ -114,14 +114,14 @@ export default {
           setTimeout(() => {
             this.isMovingLeft = false;
             this.isStandBy = true;
-          }, 1000);
+          }, 200);
           break;
         case "ArrowRight":
         case "d":
           setTimeout(() => {
             this.isMovingRight = false;
             this.isStandBy = true;
-          }, 1000);
+          }, 200);
           break;
       }
     });
