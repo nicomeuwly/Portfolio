@@ -14,13 +14,12 @@ export default {
       this.$emit("parent-to-grandparent", data);
     },
     setLinePosition() {
-      const dateWidth = document.querySelector(".list-element-date").offsetWidth;
-      const circleWidth = parseInt(document.querySelector(".list-element-circle").getAttribute("r"));
-      const windowStyle = document.querySelector("#window-content").currentStyle || window.getComputedStyle(document.querySelector("#window-content"));
-      const windowLeftMargin = windowStyle.marginLeft;
-      const windowLeftMarginNumber = parseInt(windowLeftMargin.replace("px", ""));
-      const line = document.querySelector(".bg-line");
-      line.style.left = dateWidth + circleWidth + windowLeftMarginNumber + 32 + "px";
+      const circleLeftPosition = document.querySelector("svg").getBoundingClientRect().left;
+      const circleWidth = this.$refs.container.offsetWidth * 0.08;
+      const windowMargin = window.innerWidth*0.7*0.05;
+      const containerGap = this.$refs.container.offsetWidth * 0.03;
+      const lineWidth = circleLeftPosition - windowMargin + circleWidth/2 + containerGap;
+      this.$refs.line.style.left = `${lineWidth}px`;
     },
     switchList() {
       this.toggleOn = !this.toggleOn;
@@ -35,6 +34,7 @@ export default {
   },
   mounted() {
     this.setLinePosition();
+    window.addEventListener("resize", this.setLinePosition);
   },
   computed: {
     reversedEducation() {
@@ -57,13 +57,13 @@ export default {
       </label>
       <p :class="{ 'active-text': toggleOn }" class="experience">Expérience</p>
     </div>
-    <div class="list-element-container">
+    <div class="list-element-container" ref="container">
       <ListElement v-if="!toggleOn" v-for="(element, id) in reversedEducation" :key="parseInt(id)" :id="parseInt(id)"
         :idName="'education'" :title="element.title" :date="element.date" :description="element.description" />
       <ListElement v-if="toggleOn" v-for="(element, id) in reversedExperience" :key="parseInt(id)" :id="parseInt(id)"
         :idName="'experience'" :title="element.title" :date="element.date" :description="element.description" />
     </div>
-    <div class="bg-line"></div>
+    <div class="bg-line" ref="line"></div>
   </Window>
 </template>
 
@@ -85,7 +85,7 @@ export default {
 
 .bg-line {
   width: 2px;
-  height: 70%;
+  height: 75%;
   background-color: var(--white);
   z-index: 0;
   position: absolute;
@@ -93,13 +93,12 @@ export default {
 
 .toggle-button-container {
   position: absolute;
-  top: 20px;
-  right: 30px;
+  top: 3%;
+  right: 4%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
   margin-bottom: 10%;
   width: 22%;
 }
@@ -144,7 +143,7 @@ export default {
   left: 4px;
   width: 32px;
   height: 32px;
-  background: white;
+  background: var(--white);
   border-radius: 50%;
   transform: translateY(-50%);
   transition: all .5s;
