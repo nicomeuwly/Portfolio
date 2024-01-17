@@ -77,7 +77,7 @@ export default {
       this.blocks.forEach((block) => {
         if (
           characterMidPosition >= block.left &&
-          characterMidPosition <= block.left + 120 &&
+          characterMidPosition <= block.left + 220 &&
           this.characterIsJumping
         ) {
           const blockElement = document.getElementById("block" + block.id);

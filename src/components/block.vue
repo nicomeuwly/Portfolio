@@ -12,8 +12,8 @@ export default {
 
 <style scoped>
 .block {
-  width: 12%;
-  aspect-ratio: 1/1;
+  width: 120px;
+  height: 120px;
   background-color: var(--white);
   border-radius: 20px;
   display: flex;
