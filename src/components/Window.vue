@@ -65,8 +65,8 @@ export default {
   stroke: var(--red);
 }
 #window-content {
-  margin: 0% 10% 15% 10%;
-  height: 70%;
+  margin: 0 5% 5% 5%;
+  height: 75%;
   display: flex;
   align-items: center;
 }

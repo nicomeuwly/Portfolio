@@ -18,26 +18,24 @@ export default {
 <template>
   <Window @child-to-parent="receiveDataFromChild">
     <div id="profile-container">
-      <ul>
-        <li>
-          <img src="/img/icons/Name-Icon.svg" alt="Name Icon" />Nicolas Meuwly
-        </li>
-        <li><img src="/img/icons/Age-Icon.svg" alt="Age Icon" />25 ans</li>
-        <li>
-          <img src="/img/icons/Location-Icon.svg" alt="Location Icon" />Cugy FR
-        </li>
-        <li>
-          <img src="/img/icons/Diploma-Icon.svg" alt="Diploma Icon" />Bachelor
-          en Ingénierie des médias (en cours)
-        </li>
-      </ul>
-      <div id="profile-picture-container">
+      <div class="left-side">
+        <ul>
+          <li><span class="material-symbols-rounded">account_circle</span>Nicolas Meuwly</li>
+          <li><span class="material-symbols-rounded">cake</span>25 ans</li>
+          <li><span class="material-symbols-rounded">location_on</span>Cugy FR</li>
+          <li><span class="material-symbols-rounded">school</span>Bachelor en Ingénierie des médias (en cours)</li>
+        </ul>
+      </div>
+      <div class="right-side">
         <img
           src="/img/Profile-Picture.jpeg"
           alt="Profile Picture"
           id="profile-picture"
         />
-        <MainButton :name="'LinkedIn'" :link="'https://www.linkedin.com/in/nicolas-meuwly/'"/>
+        <MainButton
+          :name="'LinkedIn'"
+          :link="'https://www.linkedin.com/in/nicolas-meuwly/'"
+        />
       </div>
     </div>
   </Window>
@@ -45,26 +43,24 @@ export default {
 
 <style scoped>
 ul {
+  list-style-type: none;
+  width: 100%;
+  height: 60%;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  align-items: left;
-  gap: 25px;
+  justify-content: space-around;
 }
-
 li {
   color: var(--white);
   font-weight: bold;
   font-size: 2rem;
   display: flex;
   align-items: center;
-  list-style: none;
+  gap: 1rem;
 }
-
-li img {
-  width: 50px;
-  height: 50px;
-  margin-right: 25px;
+.material-symbols-rounded {
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+  font-size: 3rem;
 }
 
 #profile-container {
@@ -75,9 +71,26 @@ li img {
   height: 100%;
 }
 
+.left-side {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.right-side {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5%;
+}
+
 #profile-picture {
-  width: 250px;
-  height: 250px;
+  width: 50%;
+  aspect-ratio: 1/1;
   border-radius: 50%;
   border: 2px solid var(--white);
   filter: grayscale(100%);
