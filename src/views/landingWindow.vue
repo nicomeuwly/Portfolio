@@ -6,22 +6,55 @@ export default {
     components: {
         Window,
     },
+    data() {
+        return {
+            typeValue: "",
+            typeStatus: false,
+            displayTextArray: ["Développeur web", "Designer UI", "Gamer..."],
+            typingSpeed: 100,
+            erasingSpeed: 100,
+            newTextDelay: 2000,
+            displayTextArrayIndex: 0,
+            charIndex: 0,
+        };
+    },
     methods: {
         receiveDataFromChild(data) {
             this.$emit("parent-to-grandparent", data);
         },
-        setBubbleTextMargins() {
-            const bubbleContent = document.querySelector("#bubble-content");
-            const bubbleText = document.querySelector(".bubble-text");
-            const bubbleTextHeight = bubbleText.offsetHeight;
-            const allBubbbleTexts = bubbleContent.querySelectorAll(".bubble-text");
-            allBubbbleTexts.forEach((bubbleText) => {
-                bubbleText.style.padding = `${(90 - parseInt(bubbleTextHeight)) / 2}px`;
-            });
+        typeText() {
+            if (this.charIndex < this.displayTextArray[this.displayTextArrayIndex].length) {
+                if (!this.typeStatus) this.typeStatus = true;
+                this.typeValue += this.displayTextArray[this.displayTextArrayIndex].charAt(
+                    this.charIndex
+                );
+                this.charIndex += 1;
+                setTimeout(this.typeText, this.typingSpeed);
+            } else {
+                this.typeStatus = false;
+                setTimeout(this.eraseText, this.newTextDelay);
+            }
+        },
+        eraseText() {
+            if (this.charIndex > 0) {
+                if (!this.typeStatus) this.typeStatus = true;
+                this.typeValue = this.displayTextArray[this.displayTextArrayIndex].substring(
+                    0,
+                    this.charIndex - 1
+                );
+                this.charIndex -= 1;
+                setTimeout(this.eraseText, this.erasingSpeed);
+            } else {
+                this.typeStatus = false;
+                this.displayTextArrayIndex += 1;
+                if (this.displayTextArrayIndex >= this.displayTextArray.length)
+                    this.displayTextArrayIndex = 0;
+                setTimeout(this.typeText, this.typingSpeed + 1000);
+            }
         },
     },
-    mounted() {
-        this.setBubbleTextMargins();
+    created() {
+        setTimeout(this.typeText, this.newTextDelay + 100);
     },
 };
 </script>
@@ -32,20 +65,19 @@ export default {
             <div id="left-side">
                 <p>Nicolas Meuwly</p>
                 <div id="bubble-container">
-                    <img src="/img/Bubble.svg" />
-                    <div id="bubble-content">
-                        <p class="bubble-text">Développeur web</p>
-                        <p class="bubble-text">Designer UI</p>
-                        <p class="bubble-text">Gamer...</p>
-                    </div>
+                    <span class="typed-text">{{ typeValue }}</span>
+                    <span class="blinking-cursor">|</span>
+                    <span class="cursor" :class="{ typing: typeStatus }">&nbsp;</span>
                 </div>
             </div>
-            <img src="/img/Avatar.png" id="avatar" />
+            <div id="right-side">
+                <img src="/img/Avatar.png" id="avatar" />
+            </div>
         </div>
     </Window>
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
 #landing-window-content {
     display: flex;
     justify-content: space-between;
@@ -56,11 +88,11 @@ export default {
 
 #avatar {
     height: 70%;
+    aspect-ratio: 1/1;
     border-radius: 50%;
     border: 2px solid var(--white);
     background-color: var(--blue-2);
 }
-
 
 #left-side>p {
     color: var(--white);
@@ -68,53 +100,105 @@ export default {
     margin-bottom: 0.5em;
 }
 
-#bubble-container>img {
-    position: absolute;
-    z-index: -1;
+#left-side {
+    width: 45%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#right-side {
+    width: 45%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
 }
 
 #bubble-container {
-    overflow: hidden;
-    height: 90px;
+    background-color: var(--white);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 20%;
 }
 
-.bubble-text {
-    color: var(--blue);
+.blinking-cursor {
+    font-size: 2.3rem;
+    color: var(--blue-2);
+    -webkit-animation: 1s blink step-end infinite;
+    -moz-animation: 1s blink step-end infinite;
+    -ms-animation: 1s blink step-end infinite;
+    -o-animation: 1s blink step-end infinite;
+    animation: 1s blink step-end infinite;
+}
+
+.typed-text {
+    margin-left: 1rem;
     font-size: 2rem;
+    color: var(--blue);
     font-weight: bold;
-    position: relative;
-    margin: 0;
-    animation: text-animation 5s infinite;
 }
 
+@keyframes blink {
 
-@keyframes text-animation {
-    0% {
-        transform: translateY(0);
-    }
-
-    16.66% {
-        transform: translateY(0);
-    }
-
-    33.33% {
-        transform: translateY(-90px);
+    from,
+    to {
+        color: transparent;
     }
 
     50% {
-        transform: translateY(-90px);
+        color: var(--blue-2);
+    }
+}
+
+@-moz-keyframes blink {
+
+    from,
+    to {
+        color: transparent;
     }
 
-    66.66% {
-        transform: translateY(-180px);
+    50% {
+        color: var(--blue-2);
+    }
+}
+
+@-webkit-keyframes blink {
+
+    from,
+    to {
+        color: transparent;
     }
 
-    83.33% {
-        transform: translateY(-180px);
+    50% {
+        color: #2c3e50;
+    }
+}
+
+@-ms-keyframes blink {
+
+    from,
+    to {
+        color: transparent;
     }
 
-    100% {
-        transform: translateY(0);
+    50% {
+        color: var(--blue-2);
+    }
+}
+
+@-o-keyframes blink {
+
+    from,
+    to {
+        color: transparent;
+    }
+
+    50% {
+        color: var(--blue-2);
     }
 }
 </style>
