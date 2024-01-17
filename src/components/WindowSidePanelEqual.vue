@@ -87,4 +87,29 @@ export default {
   width: 50%;
   height: 85%;
 }
+#left-side-panel-content {
+  height: 90%;
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-bottom: 10%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+#right-side-panel-content {
+  height: 78%;
+  padding-top: 22%;
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-bottom: 10%;
+  display: flex;
+  flex-direction: column;
+  gap: 10%;
+  overflow-y: scroll;
+}
+
+#right-side-panel-content::-webkit-scrollbar {
+  display: none;
+}
 </style>
