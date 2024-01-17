@@ -52,9 +52,20 @@ export default {
                 setTimeout(this.typeText, this.typingSpeed + 1000);
             }
         },
+        setBubbleTipPosition() {
+            const bubbleWidth = this.$refs.bubble.offsetWidth;
+            const tip = this.$refs.tip;
+            const tipWidth = tip.offsetWidth;
+            tip.style.left = `${bubbleWidth - tipWidth * 0.7}px`;
+            tip.style.top = `${-tipWidth * 0.7}px`;
+        },
     },
     created() {
         setTimeout(this.typeText, this.newTextDelay + 100);
+    },
+    mounted() {
+        this.setBubbleTipPosition();
+        window.addEventListener("resize", this.setBubbleTipPosition);
     },
 };
 </script>
@@ -64,11 +75,12 @@ export default {
         <div id="landing-window-content">
             <div id="left-side">
                 <p>Nicolas Meuwly</p>
-                <div id="bubble-container">
+                <div id="bubble-container" ref="bubble">
                     <span class="typed-text">{{ typeValue }}</span>
                     <span class="blinking-cursor">|</span>
                     <span class="cursor" :class="{ typing: typeStatus }">&nbsp;</span>
                 </div>
+                <img src="/img/Tip.svg" id="bubble-tip" alt="Bubble tip" ref="tip"/>
             </div>
             <div id="right-side">
                 <img src="/img/Avatar.png" id="avatar" />
@@ -124,10 +136,15 @@ export default {
     width: 100%;
     height: 20%;
 }
+#bubble-tip {
+    width: 15%;
+    position: relative;
+}
 
 .blinking-cursor {
     font-size: 2.3rem;
-    color: var(--blue-2);
+    margin-bottom: 0.5rem;
+    color: var(--black);
     -webkit-animation: 1s blink step-end infinite;
     -moz-animation: 1s blink step-end infinite;
     -ms-animation: 1s blink step-end infinite;
@@ -150,7 +167,7 @@ export default {
     }
 
     50% {
-        color: var(--blue-2);
+        color: var(--black);
     }
 }
 
@@ -162,7 +179,7 @@ export default {
     }
 
     50% {
-        color: var(--blue-2);
+        color: var(--black);
     }
 }
 
@@ -174,7 +191,7 @@ export default {
     }
 
     50% {
-        color: #2c3e50;
+        color: var(--black);
     }
 }
 
@@ -186,7 +203,7 @@ export default {
     }
 
     50% {
-        color: var(--blue-2);
+        color: var(--black);
     }
 }
 
@@ -198,7 +215,7 @@ export default {
     }
 
     50% {
-        color: var(--blue-2);
+        color: var(--black);
     }
 }
 </style>
