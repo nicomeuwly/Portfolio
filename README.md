@@ -39,7 +39,7 @@ La dernière section de mon site offre un regard approfondi sur sa conception, i
 Dans un premier temps, j'ai designé sur Figma mon site afin d'avoir une bonne base avant de commencer le développement. Cela me permet d'aller un peu plus vite en cas de modifications de mise en page, etc. Cette phase m'a pris environ une semaine en travaillant dessus quelques heures par jour.
 
 ### Développement
-Une fois le design achevé, j'ai entamé le développement de mon site. J'ai choisi de travailler avec Vue.js en raison de sa simplicité à séparer le développement en composants. De plus, il s'agit d'un framework étudié lors de cours à la HEIG-VD, donc je ne partais pas de zéro en termes de connaissances, ce qui me simplifiait un peu la tâche.
+Une fois le design achevé, j'ai entamé le développement de mon site. J'ai choisi de travailler avec Vue.js en raison de sa simplicité à séparer le développement en composants. De plus, il s'agit d'un framework étudié lors de cours à la HEIG-VD, donc je ne partais pas de zéro en termes de connaissances, ce qui me simplifiait un peu la tâche. Cela m'a pris environ un mois en travaillant dessus quelques heures par jour.
 
 ### Déploiement
 Au fur et à mesure que le développement avançait, j'ai déployé mon site directement depuis son repo GitHub à l'aide de GitHub Pages pour vérifier le bon fonctionnement de la version publiée. Le site est ainsi directement disponible à cette adresse : [nicomeuwly.github.io/Portfolio/](https://nicomeuwly.github.io/Portfolio/)
