@@ -72,7 +72,7 @@ export default {
   }
   #mobileview {
     width: 100vw;
-    height: 100vh;
+    height: 100dvh;
     display: flex;
     flex-direction: column;
     align-items: center;
