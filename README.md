@@ -43,3 +43,7 @@ Une fois le design achevé, j'ai entamé le développement de mon site. J'ai cho
 
 ### Déploiement
 Au fur et à mesure que le développement avançait, j'ai déployé mon site directement depuis son repo GitHub à l'aide de GitHub Pages pour vérifier le bon fonctionnement de la version publiée. Le site est ainsi directement disponible à cette adresse : [nicomeuwly.github.io/Portfolio/](https://nicomeuwly.github.io/Portfolio/)
+
+## Améliorations futures 🚀
+
+Mon site présente encore des problèmes de mise à l'échelle du contenu pour s'adapter à tous les types d'écrans. Actuellement, il ne dispose pas d'une version mobile, mais celle-ci sera intégrée prochainement.
