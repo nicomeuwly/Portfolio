@@ -112,8 +112,8 @@ h2 {
   width: 180.8px;
 }
 .start {
-  font-size: 5rem;
-  fill: 1;
+  font-size: 4rem;
+  padding: 0.5rem;
   background-color: var(--white);
   border: 2px solid var(--white);
   color: var(--blue);
@@ -121,6 +121,7 @@ h2 {
   text-align: center;
   cursor: pointer;
   transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+  font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 24;
 }
 .start:hover {
   background-color: var(--white-2);

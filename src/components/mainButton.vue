@@ -16,14 +16,14 @@ export default {
 div {
   min-width: 100px;
   max-width: 250px;
-  height: 60px;
+  height: 40px;
   padding-left: 20px;
   padding-right: 20px;
   background-color: var(--white);
   border: 2px solid transparent;
-  border-radius: 20px;
+  border-radius: 10px;
   color: var(--blue);
-  font-size: 1.5rem;
+  font-size: 1rem;
   font-weight: bold;
   display: flex;
   justify-content: center;

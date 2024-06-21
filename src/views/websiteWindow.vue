@@ -126,7 +126,7 @@ export default {
             :image="techno.icon"
           />
           <MainButton
-            :name="'GitHub repository'"
+            :name="'Repository GitHub'"
             :link="'https://github.com/nicomeuwly/Portfolio'"
           />
         </div>
@@ -189,7 +189,8 @@ li.active {
   min-height: 188px;
   display: flex;
   justify-content: center;
-  flex-direction: row;
+  align-items: center;
+  flex-direction: column;
   flex-wrap: wrap;
   overflow-x: hidden;
   overflow-y: auto;

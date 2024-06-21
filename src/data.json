@@ -160,41 +160,61 @@
       "level": 4
     },
     "4": {
+      "title": "TypeScript",
+      "icon": "TypeScript",
+      "level": 3
+    },
+    "5": {
       "title": "Node.js",
       "icon": "Node",
       "level": 2
     },
-    "5": {
+    "6": {
       "title": "Vue.js",
       "icon": "Vue",
       "level": 4
     },
-    "6": {
+    "7": {
       "title": "Angular",
       "icon": "Angular",
       "level": 1
     },
-    "7": {
+    "8": {
+      "title": "Next.js",
+      "icon": "Next",
+      "level": 4
+    },
+    "9": {
+      "title": "React",
+      "icon": "React",
+      "level": 3
+    },
+    "10": {
+      "title": "Tailwind CSS",
+      "icon": "TailwindCSS",
+      "level": 3
+    },
+    "11": {
       "title": "Laravel",
       "icon": "Laravel",
       "level": 3
     },
-    "8": {
+    "12": {
       "title": "PHP",
       "icon": "PHP",
       "level": 2
     },
-    "9": {
-      "title": "MySQL",
-      "icon": "MySQL",
+    "13": {
+      "title": "PostgreSQL",
+      "icon": "PostgreSQL",
       "level": 2
     },
-    "10": {
+    "14": {
       "title": "MongoDB",
       "icon": "MongoDB",
       "level": 2
     },
-    "11": {
+    "15": {
       "title": "GitHub",
       "icon": "GitHub",
       "level": 3
@@ -239,6 +259,28 @@
   },
   "jobs": {
     "1": {
+      "title": "WageWizard",
+      "description": "Travaillant à temps partiel et étant payé à l'heure, je souhaitais un outil me permettant de calculer mon salaire en temps réel en fonction des heures travaillées. J'ai alors commencer à imaginer une application web répondant à mes besoins sous le nom de \"WageWizard\". Il est possible d'avoir un aperçu de l'app via la maquette Figma et du code via le repo GitHub. L'application est réalisé avec Next.js et une base de données PostgreSQL. Le tout est déployé à l'aide de Vercel.",
+      "image": "WageWizard.png",
+      "tags": [
+        "Next.js",
+        "TypeScript",
+        "Tailwind CSS",
+        "PostgreSQL",
+        "Figma"
+      ],
+      "links": [
+        {
+          "title": "Repository GitHub",
+          "url": "https://github.com/nicomeuwly/WageWizard"
+        },
+        {
+          "title": "Maquette Figma",
+          "url": "https://www.figma.com/proto/EfXsqYWMHirkHsGeKNbdP1/WageWizard?page-id=0%3A1&node-id=1-2&starting-point-node-id=1%3A2&mode=design&t=QbzIBZ7i8XdULDHX-1"
+        }
+      ]
+    },
+    "2": {
       "title": "CO2-Centuries",
       "description": "CO2-Centuries est un projet réalisé dans le cadre du cours de \"Visualisation de données\" à la HEIG-VD. Le but était de représenter les émissions de CO2 par pays et par année et le tout sous forme de carte du monde.",
       "image": "CO2-Centuries.png",
@@ -250,16 +292,54 @@
       ],
       "links": [
         {
-          "title": "GitHub Repository",
+          "title": "Repository GitHub",
           "url": "https://github.com/nicomeuwly/CO2-Centuries"
         },
         {
-          "title": "Site",
+          "title": "Site web",
           "url": "https://co2-centuries.netlify.app/"
         }
       ]
     },
-    "2": {
+    "3": {
+      "title": "MoonShooter",
+      "description": "Ce projet fait partie d'un cours optionnel enseigné à la HEIG-VD durant la 3ème année du Bachelor en Ingénierie des médias. L'objectif était de nous initier à la réalité virtuelle en créant une expérience VR à l'aide du framework A-Frame. J'ai choisi de réaliser un jeu de tir dans l'espace nommé \"MoonShooter\" à l'aide de A-Frame, Vue.js et de nombreux modèles 3D libres de droits.",
+      "image": "MoonShooter.png",
+      "tags": [
+        "VR",
+        "Video Game",
+        "A-Frame",
+        "Vue.js"
+      ],
+      "links": [
+        {
+          "title": "Repository GitHub",
+          "url": "https://github.com/nicomeuwly/moon-shooter"
+        }
+      ]
+    },
+    "4": {
+      "title": "On The Way",
+      "description": "Dans le cadre de notre projet d'intégration, dernière étape avant notre Travail de Bachelor en Ingénierie des médias à la HEIG-VD, nous avions pour mission de promouvoir la ville d'Yverdon-les-Bains. Nous avons choisi de créer un podcast de fiction destiné aux pendulaires d'Yverdon. En complément, nous avons produit un épisode pilote et développé un site web vitrine pour le podcast. Ce site, réalisé avec Next.js et Tailwind CSS, comporte deux parties : une pour les visiteurs, où ils peuvent écouter l'épisode pilote et découvrir les personnages, et une autre pour les administrateurs, permettant de gérer les épisodes, les personnages et les questions des auditeurs. Le déploiement du site a été effectué via Vercel.",
+      "image": "OnTheWay.png",
+      "tags": [
+        "Next.js",
+        "TypeScript",
+        "Tailwind CSS",
+        "Podcast"
+      ],
+      "links": [
+        {
+          "title": "Repository GitHub",
+          "url": "https://github.com/pablo-crotti/on-the-way"
+        },
+        {
+          "title": "Site web",
+          "url": "https://ontheway-podcast.ch/"
+        }
+      ]
+    },
+    "5": {
       "title": "On en parle",
       "description": "Dans le cadre du projet d'articulaion, dernière étape pour achever la 2ème année en Ingénierie des médias à la HEIG-VD, nous avons réalisé un site web pour l'émission \"On en parle\" de la RTS. Le but était de faciliter la gestion des questions des auditeurs lors de la diffusion de l'émission. Pour ce faire, nous avons séparé le site en 2 parties, une partie pour les auditeurs et une partie pour les administrateurs. La partie \"auditeur\" permet de poser une question et d'écouter l'émission. La partie \"administrateur\" permet de gérer les questions, de les valider et de les supprimer. Le site est réalisé avec Vue.js et Laravel. Le site n'est malheureusement plus en ligne.",
       "image": "OnEnParle.png",
@@ -271,7 +351,7 @@
       ],
       "links": [
         {
-          "title": "GitHub Repository",
+          "title": "Repository GitHub",
           "url": "https://github.com/WinnieTheBloue/on-en-parle"
         },
         {
@@ -280,28 +360,7 @@
         }
       ]
     },
-    "3": {
-      "title": "WageWizard",
-      "description": "Travaillant à temps partiel et étant payé à l'heure, je souhaitais un outil me permettant de calculer mon salaire en temps réel en fonction des heures travaillées. J'ai alors commencer à imaginer une application web répondant à mes besoins sous le nom de \"WageWizard\". Il est possible d'avoir un aperçu de l'app via la maquette Figma et du backend via le repo GitHub. Le backend est réalisé avec Node.js et Express.js et la base de données avec MongoDB. Le frontend n'est pas encore commencé.",
-      "image": "WageWizard.png",
-      "tags": [
-        "JavaScript",
-        "Express.js",
-        "MongoDB",
-        "Figma"
-      ],
-      "links": [
-        {
-          "title": "GitHub Repository",
-          "url": "https://github.com/nicomeuwly/WageWizard-API"
-        },
-        {
-          "title": "Maquette Figma",
-          "url": "https://www.figma.com/proto/EfXsqYWMHirkHsGeKNbdP1/WageWizard?page-id=0%3A1&node-id=1-2&starting-point-node-id=1%3A2&mode=design&t=QbzIBZ7i8XdULDHX-1"
-        }
-      ]
-    },
-    "4": {
+    "6": {
       "title": "Fan2Minecraft",
       "description": "Dans le cadre du cours \"E-Commerce\" à la HEIG-VD, nous avons dû réaliser un projet web autour d’un site e-commerce. Nous avons choisi de créer un site de vente de produits dérivés du jeu \"Minecraft\". Le site a été réalisé avec Wordpress et WooCommerce avec l'aide de plusieurs plugins. Le site n'est malheureusement plus en ligne mais il est possible d'en avoir un aperçu via le rapport du projet.",
       "image": "Fan2Minecraft.png",
@@ -318,7 +377,7 @@
         }
       ]
     },
-    "5": {
+    "7": {
       "title": "Pronumeric",
       "description": "Dans le cadre du cours \"Marketing Digital\" à la HEIG-VD, nous avons dû réaliser un projet web autour d'un blog d'actualité. Nous avons choisi de créer un blog autour de l'actualité sur les nouvelles technologies. Le site a été réalisé avec Wordpress avec l'aide de plusieurs plugins. Le site n'est malheureusement plus en ligne mais il est possible d'en avoir un aperçu via le rapport du projet.",
       "image": "Pronumeric.png",

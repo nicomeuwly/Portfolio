@@ -29,7 +29,9 @@ export default {
   <WindowSidePanelEqual @child-to-parent="receiveDataFromChild">
     <template v-slot:left-side-panel>
       <img :src="'/Portfolio/img/jobs/' + job.image" alt="job image" />
-      <MainButton v-for="link in job.links" :key="link.title" :name="link.title" :link="link.url" />
+      <div class="buttons-container">
+        <MainButton v-for="link in job.links" :key="link.title" :name="link.title" :link="link.url" />
+      </div>
     </template>
     <template v-slot:right-side-panel>
       <h1>{{ job.title }}</h1>
@@ -67,7 +69,9 @@ img {
   max-height: 60%;
 }
 
-MainButton {
-  width: 50%;
+.buttons-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 </style>

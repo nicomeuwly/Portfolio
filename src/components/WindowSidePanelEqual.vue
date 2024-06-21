@@ -94,7 +94,8 @@ export default {
   padding-bottom: 10%;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: center;
+  gap: 40px;
   align-items: center;
 }
 #right-side-panel-content {
