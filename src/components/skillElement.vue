@@ -133,7 +133,7 @@ export default {
         :alt="icon + ' logo'"
         @load="processImage"
       />
-      <h3>{{ title }}</h3>
+      <h3 v-if="showSkillLevel">{{ title }}</h3>
     </div>
   </div>
 </template>
@@ -175,6 +175,7 @@ img {
 h3 {
   margin: 0;
   font-size: 0.9rem;
+  font-weight: normal;
 }
 .fade-enter-active,
 .fade-leave-active {

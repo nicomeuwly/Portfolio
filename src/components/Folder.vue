@@ -58,10 +58,10 @@ export default {
 
 .folder-title {
   margin-top: 5%;
-  color: var(--white);
+  color: var(--white-2);
 }
 
 .folder-title.hovered {
-  font-weight: bold;
+  color: var(--white);
 }
 </style>

@@ -23,7 +23,7 @@ export default {
           <li><span class="material-symbols-rounded">account_circle</span>Nicolas Meuwly</li>
           <li><span class="material-symbols-rounded">cake</span>25 ans</li>
           <li><span class="material-symbols-rounded">location_on</span>Cugy FR</li>
-          <li><span class="material-symbols-rounded">school</span>Bachelor en Ingénierie des médias (en cours)</li>
+          <li><span class="material-symbols-rounded">school</span>Bachelor en Ingénierie des médias</li>
         </ul>
       </div>
       <div class="right-side">
@@ -52,7 +52,6 @@ ul {
 }
 li {
   color: var(--white);
-  font-weight: bold;
   font-size: 2rem;
   display: flex;
   align-items: center;

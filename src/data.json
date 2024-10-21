@@ -259,6 +259,31 @@
   },
   "jobs": {
     "1": {
+      "title": "Travail de Bachelor",
+      "description": "Dernière étape de ma formation en Ingénierie des Médias, mon travail de Bachelor a consisté en un projet individuel d’une durée d’environ trois mois, visant à mettre en pratique l’ensemble des compétences acquises au cours de mes études. Réalisé en partenariat avec Digitec Galaxus AG, le projet avait pour objectif d’automatiser la gestion du stock cible des succursales de l’entreprise. Ce stock comprend des produits issus des meilleures ventes, des nouveautés, etc., disponibles en permanence à l’achat directement en magasin. Bien que le développement concret du projet n’ait pas été entièrement achevé, il est possible d’obtenir un aperçu de la solution envisagée à travers une maquette interactive sur Figma et du code accessible sur GitHub. Le rapport complet du projet, retraçant tout le processus et les étapes du travail, est également disponible.",
+      "image": "DG-TargetStock.png",
+      "tags": [
+        "Next.js",
+        "Web scraping",
+        "Figma",
+        "Gestion de projet"
+      ],
+      "links": [
+        {
+          "title": "Repository GitHub",
+          "url": "https://github.com/nicomeuwly/dg-targetstock"
+        },
+        {
+          "title": "Maquette Figma",
+          "url": "https://www.figma.com/proto/0mP93Jp6FYhDDh7AHDIM6Q/DG-TargetStock?page-id=401%3A14803&node-id=401-14828&node-type=canvas&viewport=336%2C320%2C0.05&t=Of7Vv3QPDLXmTdPO-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=401%3A14828"
+        },
+        {
+          "title": "Rapport du projet",
+          "url": "/Portfolio/docs/MeuwlyNicolas_TB_Rapport.pdf"
+        }
+      ]
+    },
+    "2": {
       "title": "WageWizard",
       "description": "Travaillant à temps partiel et étant payé à l'heure, je souhaitais un outil me permettant de calculer mon salaire en temps réel en fonction des heures travaillées. J'ai alors commencer à imaginer une application web répondant à mes besoins sous le nom de \"WageWizard\". Il est possible d'avoir un aperçu de l'app via la maquette Figma et du code via le repo GitHub. L'application est réalisé avec Next.js et une base de données PostgreSQL. Le tout est déployé à l'aide de Vercel.",
       "image": "WageWizard.png",
@@ -277,27 +302,6 @@
         {
           "title": "Maquette Figma",
           "url": "https://www.figma.com/proto/EfXsqYWMHirkHsGeKNbdP1/WageWizard?page-id=0%3A1&node-id=1-2&starting-point-node-id=1%3A2&mode=design&t=QbzIBZ7i8XdULDHX-1"
-        }
-      ]
-    },
-    "2": {
-      "title": "CO2-Centuries",
-      "description": "CO2-Centuries est un projet réalisé dans le cadre du cours de \"Visualisation de données\" à la HEIG-VD. Le but était de représenter les émissions de CO2 par pays et par année et le tout sous forme de carte du monde.",
-      "image": "CO2-Centuries.png",
-      "tags": [
-        "HTML",
-        "CSS",
-        "JavaScript",
-        "D3.js"
-      ],
-      "links": [
-        {
-          "title": "Repository GitHub",
-          "url": "https://github.com/nicomeuwly/CO2-Centuries"
-        },
-        {
-          "title": "Site web",
-          "url": "https://co2-centuries.netlify.app/"
         }
       ]
     },
@@ -340,6 +344,27 @@
       ]
     },
     "5": {
+      "title": "CO2-Centuries",
+      "description": "CO2-Centuries est un projet réalisé dans le cadre du cours de \"Visualisation de données\" à la HEIG-VD. Le but était de représenter les émissions de CO2 par pays et par année et le tout sous forme de carte du monde.",
+      "image": "CO2-Centuries.png",
+      "tags": [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "D3.js"
+      ],
+      "links": [
+        {
+          "title": "Repository GitHub",
+          "url": "https://github.com/nicomeuwly/CO2-Centuries"
+        },
+        {
+          "title": "Site web",
+          "url": "https://co2-centuries.netlify.app/"
+        }
+      ]
+    },
+    "6": {
       "title": "On en parle",
       "description": "Dans le cadre du projet d'articulaion, dernière étape pour achever la 2ème année en Ingénierie des médias à la HEIG-VD, nous avons réalisé un site web pour l'émission \"On en parle\" de la RTS. Le but était de faciliter la gestion des questions des auditeurs lors de la diffusion de l'émission. Pour ce faire, nous avons séparé le site en 2 parties, une partie pour les auditeurs et une partie pour les administrateurs. La partie \"auditeur\" permet de poser une question et d'écouter l'émission. La partie \"administrateur\" permet de gérer les questions, de les valider et de les supprimer. Le site est réalisé avec Vue.js et Laravel. Le site n'est malheureusement plus en ligne.",
       "image": "OnEnParle.png",
@@ -360,7 +385,7 @@
         }
       ]
     },
-    "6": {
+    "7": {
       "title": "Fan2Minecraft",
       "description": "Dans le cadre du cours \"E-Commerce\" à la HEIG-VD, nous avons dû réaliser un projet web autour d’un site e-commerce. Nous avons choisi de créer un site de vente de produits dérivés du jeu \"Minecraft\". Le site a été réalisé avec Wordpress et WooCommerce avec l'aide de plusieurs plugins. Le site n'est malheureusement plus en ligne mais il est possible d'en avoir un aperçu via le rapport du projet.",
       "image": "Fan2Minecraft.png",
@@ -377,7 +402,7 @@
         }
       ]
     },
-    "7": {
+    "8": {
       "title": "Pronumeric",
       "description": "Dans le cadre du cours \"Marketing Digital\" à la HEIG-VD, nous avons dû réaliser un projet web autour d'un blog d'actualité. Nous avons choisi de créer un blog autour de l'actualité sur les nouvelles technologies. Le site a été réalisé avec Wordpress avec l'aide de plusieurs plugins. Le site n'est malheureusement plus en ligne mais il est possible d'en avoir un aperçu via le rapport du projet.",
       "image": "Pronumeric.png",

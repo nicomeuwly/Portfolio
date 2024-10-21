@@ -10,7 +10,7 @@ export default {
         return {
             typeValue: "",
             typeStatus: false,
-            displayTextArray: ["Développeur web", "Designer UI", "Gamer..."],
+            displayTextArray: ["Développeur web", "Designer UX/UI", "Gamer..."],
             typingSpeed: 100,
             erasingSpeed: 100,
             newTextDelay: 2000,
