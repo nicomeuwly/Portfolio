@@ -42,7 +42,7 @@ Dans un premier temps, j'ai designé sur Figma mon site afin d'avoir une bonne b
 Une fois le design achevé, j'ai entamé le développement de mon site. J'ai choisi de travailler avec Vue.js en raison de sa simplicité à séparer le développement en composants. De plus, il s'agit d'un framework étudié lors de cours à la HEIG-VD, donc je ne partais pas de zéro en termes de connaissances, ce qui me simplifiait un peu la tâche. Cela m'a pris environ un mois en travaillant dessus quelques heures par jour.
 
 ### Déploiement
-Au fur et à mesure que le développement avançait, j'ai déployé mon site directement depuis son repo GitHub à l'aide de GitHub Pages pour vérifier le bon fonctionnement de la version publiée. Le site est ainsi directement disponible à cette adresse : [nicomeuwly.github.io/Portfolio/](https://nicomeuwly.github.io/Portfolio/)
+Au fur et à mesure que le développement avançait, j'ai déployé mon site directement depuis son repo GitHub à l'aide de GitHub Pages pour vérifier le bon fonctionnement de la version publiée. Le site est ainsi directement disponible à cette adresse : [nicomeuwly.github.io/](https://nicomeuwly.github.io/)
 
 ## Améliorations futures 🚀
 

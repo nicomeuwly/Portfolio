@@ -62,15 +62,15 @@ export default {
     characterImageSource() {
       // Logique pour déterminer la source de l'image en fonction de l'état du personnage
       if (this.isJumping) {
-        return "/Portfolio/img/character/Anim-6.png";
+        return "/img/character/Anim-6.png";
       } else if (this.isMovingLeft) {
-        return "/Portfolio/img/character/Walk.gif";
+        return "/img/character/Walk.gif";
       } else if (this.isMovingRight) {
-        return "/Portfolio/img/character/Walk.gif";
+        return "/img/character/Walk.gif";
       } else if (this.isStandBy) {
-        return "/Portfolio/img/character/Anim-0.png";
+        return "/img/character/Anim-0.png";
       } else {
-        return "/Portfolio/img/character/Anim-0.png"; // Image par défaut
+        return "/img/character/Anim-0.png"; // Image par défaut
       }
     },
     characterX() {

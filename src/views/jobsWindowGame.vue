@@ -63,7 +63,7 @@ export default {
         this.characterPosition.y = floorPosition.top - marginUpAndDown;
         this.defaultCharacterHeight = floorPosition.top - marginUpAndDown;
         const image = new Image();
-        image.src = "/Portfolio/img/character/Anim-0.png";
+        image.src = "/img/character/Anim-0.png";
         image.onload = () => {
           this.characterWidth = image.width;
           this.jumpLevel = characterContainerHeight - image.height;

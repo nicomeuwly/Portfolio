@@ -129,7 +129,7 @@ export default {
     <div class="skill-element">
       <img
         ref="image"
-        :src="'/Portfolio/img/logos/' + icon + '.png'"
+        :src="'/img/logos/' + icon + '.png'"
         :alt="icon + ' logo'"
         @load="processImage"
       />

@@ -16,7 +16,7 @@ export default {
             <p>{{ description }}</p>
         </div>
         <div class="img-container">
-            <img :src="'/Portfolio/img/logos/' + image + '.png'" :alt="image + ' logo'">
+            <img :src="'/img/logos/' + image + '.png'" :alt="image + ' logo'">
         </div>
     </div>
 </template>

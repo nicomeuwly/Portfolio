@@ -28,7 +28,7 @@ export default {
 <template>
   <WindowSidePanelEqual @child-to-parent="receiveDataFromChild">
     <template v-slot:left-side-panel>
-      <img :src="'/Portfolio/img/jobs/' + job.image" alt="job image" />
+      <img :src="'/img/jobs/' + job.image" alt="job image" />
       <div class="buttons-container">
         <MainButton v-for="link in job.links" :key="link.title" :name="link.title" :link="link.url" />
       </div>
