@@ -11,6 +11,15 @@ export default {
     receiveDataFromChild(data) {
       this.$emit("parent-to-grandparent", data);
     },
+    calculateAge(date) {
+      const birthDate = new Date(date);
+      const today = new Date();
+      let age = today.getFullYear() - birthDate.getFullYear();
+      if (today.getMonth() < birthDate.getMonth() || (today.getMonth() === birthDate.getMonth() && today.getDate() < birthDate.getDate())) {
+        age--;
+      }
+      return age;
+    }
   },
 };
 </script>
@@ -21,21 +30,14 @@ export default {
       <div class="left-side">
         <ul>
           <li><span class="material-symbols-rounded">account_circle</span>Nicolas Meuwly</li>
-          <li><span class="material-symbols-rounded">cake</span>25 ans</li>
+          <li><span class="material-symbols-rounded">cake</span>{{ calculateAge("1998-10-23") }} ans</li>
           <li><span class="material-symbols-rounded">location_on</span>Cugy FR</li>
           <li><span class="material-symbols-rounded">school</span>Bachelor en Ingénierie des médias</li>
         </ul>
       </div>
       <div class="right-side">
-        <img
-          src="/img/Profile-Picture.jpeg"
-          alt="Profile Picture"
-          id="profile-picture"
-        />
-        <MainButton
-          :name="'LinkedIn'"
-          :link="'https://www.linkedin.com/in/nicolas-meuwly/'"
-        />
+        <img src="/img/Profile-Picture.jpeg" alt="Profile Picture" id="profile-picture" />
+        <MainButton :name="'LinkedIn'" :link="'https://www.linkedin.com/in/nicolas-meuwly/'" />
       </div>
     </div>
   </Window>
@@ -50,6 +52,7 @@ ul {
   flex-direction: column;
   justify-content: space-around;
 }
+
 li {
   color: var(--white);
   font-size: 2rem;
@@ -57,6 +60,7 @@ li {
   align-items: center;
   gap: 1rem;
 }
+
 .material-symbols-rounded {
   font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
   font-size: 3rem;

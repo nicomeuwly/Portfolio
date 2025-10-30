@@ -46,4 +46,4 @@ Au fur et à mesure que le développement avançait, j'ai déployé mon site dir
 
 ## Améliorations futures 🚀
 
-Mon site présente encore des problèmes de mise à l'échelle du contenu pour s'adapter à tous les types d'écrans. Actuellement, il ne dispose pas d'une version mobile, mais celle-ci sera intégrée prochainement.
+Mon site présente encore des problèmes de mise à l'échelle du contenu pour s'adapter à tous les types d'écrans. Actuellement, il ne dispose pas d'une version mobile. Ces problèmes seront corrigés dans une V2 de mon portfolio qui est en cours de conception. 

@@ -210,16 +210,31 @@
       "level": 2
     },
     "13": {
+      "title": "WordPress",
+      "icon": "WordPress",
+      "level": 2
+    },
+    "14": {
+      "title": "Python",
+      "icon": "Python",
+      "level": 2
+    },
+    "15": {
+      "title": "Java",
+      "icon": "Java",
+      "level": 1
+    },
+    "16": {
       "title": "PostgreSQL",
       "icon": "PostgreSQL",
       "level": 2
     },
-    "14": {
+    "17": {
       "title": "MongoDB",
       "icon": "MongoDB",
       "level": 2
     },
-    "15": {
+    "18": {
       "title": "GitHub",
       "icon": "GitHub",
       "level": 3
